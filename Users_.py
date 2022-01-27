@@ -10,6 +10,9 @@ class Users(Person):
     def Borrow(self, book):
         self.borrow.append(book)
 
+    def BackTo(self, book):
+        self.borrow.pop(book)
+
     def __repr__(self):
         affiche = f"{self.name} {self.firstName} {self.id} {self.rank}"
         return affiche
