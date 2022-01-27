@@ -10,3 +10,7 @@ class Books:
         self.ref=
         self.dispo=False
         self.backto=backto
+
+    def __repr__(self):
+        affiche= f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category}\n"
+        return affiche
