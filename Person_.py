@@ -4,7 +4,7 @@ class Person:
         self.name = name
         self.firstName = firstName
         self.pwd = pwd
-        self.id = name[0]+"."+ firstName
+        self.id = name[0] + "." + firstName
 
     def __repr__(self):
         affiche = f"{self.name} {self.firstName} {self.id}"

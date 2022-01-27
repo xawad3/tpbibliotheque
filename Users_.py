@@ -7,10 +7,8 @@ class Users(Person):
         self.rank = 0
         self.borrow = []
 
-    def Borrow:
-
-            pass
-
+    def Borrow(self, book):
+        self.borrow.append(book)
 
     def __repr__(self):
         affiche = f"{self.name} {self.firstName} {self.id} {self.rank}"
