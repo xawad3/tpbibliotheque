@@ -7,10 +7,13 @@ class Books:
         self.language=language
         self.type=type
         self.category=category
-        self.ref=
-        self.dispo=False
-        self.backto=backto
+        self.ref=title[0]+author[0]+str(random.randint(0,100000))
+        self.dispo=True
+        self.backto=None
 
     def __repr__(self):
-        affiche= f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category}\n"
+        affiche= f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est enregistré sous la référence {self.ref}\n"
         return affiche
+
+book1 = Books("Rama", "Kdik", "english", "SF", "novell")
+print (book1)
