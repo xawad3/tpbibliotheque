@@ -1,5 +1,6 @@
 from Books_ import *
 from Comic_strip import *
+from Users_ import *
 
 
 class Library:
@@ -17,3 +18,9 @@ class Library:
             affiche = f"Voici la liste des livres, triés par catégorie: {self.section}"
         if choix = 2:
             affiche = f"Voici la liste des livres, triés par auteurs: {self.author}"
+
+    def getName():
+        return self.name
+
+    def add_a_book(book):
+        with open("list_books.txt", 'w') as f:
