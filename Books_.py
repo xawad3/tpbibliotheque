@@ -1,4 +1,5 @@
 import random
+from Comic_strip import *
 from Users_ import *
 
 class Books:
