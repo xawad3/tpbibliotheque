@@ -1,8 +1,11 @@
 from Books_ import *
 
-class ComicStrip(Books) :
-    def __init__(self, title, author, language, type, category,color, artist):
+
+class ComicStrip(Books):
+
+    def __init__(self, title, author, language, type, category, color, artist):
         super().__init__(self, title, author, language, type, category)
+        self.color = True
         self.color = color
         self.artist = artist
 
@@ -11,9 +14,8 @@ class ComicStrip(Books) :
         return affiche
 
 
-bd1 = ComicStrip("Huntr 2-La brousse","Jordan Morris", "Français", "Aventure", "BD","Couleur", "Tony Cliff")
-bd2 = ComicStrip("Akira","Otomo Katsuhiro", "Français", "Anticipation", "BD","N&B", "Otomo Katsuhiro")
-bd3 = ComicStrip("Atar Gull ou le destin d'un esclave modèle","Fabien Nury", "Français", "Adaptation", "BD","Couleur", "Laurence Croix")
+bd1 = ComicStrip("Huntr 2-La brousse", "Jordan Morris", "Français", "Aventure", "BD", True, "Tony Cliff")
+# bd2 = ComicStrip("Akira","Otomo Katsuhiro", "Français", "Anticipation", "BD",False, "Otomo Katsuhiro")
+# bd3 = ComicStrip("Atar Gull ou le destin d'un esclave modèle","Fabien Nury", "Français", "Adaptation", "BD",True, "Laurence Croix")
 
-# Print(bd1)
-
+Print(bd1)
