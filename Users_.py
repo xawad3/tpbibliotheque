@@ -14,5 +14,5 @@ class Users(Person):
         self.borrow.pop(book)
 
     def __repr__(self):
-        affiche = f"{self.name} {self.firstName} {self.id} {self.rank}"
+        affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank}"
         return affiche
