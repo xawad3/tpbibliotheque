@@ -10,7 +10,7 @@ class Users(Person):
         self.rank = 0
         self.borrow = []
 
-    def Borrow(self):
+    def Borrow(self, book):
         self.book = book.getTitle()
         self.borrow.append(book)
 
