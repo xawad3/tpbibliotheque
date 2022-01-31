@@ -21,4 +21,4 @@ class Books:
         return affiche
 
 book1 = Books("Rama", "Kdik", "english", "SF", "novell")
-print (book1)
+#print (book1)
