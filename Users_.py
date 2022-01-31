@@ -20,5 +20,3 @@ class Users(Person):
     def __repr__(self):
         affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow}"
         return affiche
-
-print(user)
