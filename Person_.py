@@ -7,7 +7,7 @@ class Person:
         self.id = name[0] + "." + firstName
 
     def __repr__(self):
-        affiche = f"{self.name} {self.firstName} {self.id}"
+        affiche = f"{self.name} {self.firstName} son identifiant est {self.id}"
         return affiche
 
 
