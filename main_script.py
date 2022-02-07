@@ -32,6 +32,18 @@ while True:
                 biblio.users.append(new)
                 biblio.add_user(new)
 
+    print(biblio.users)
+
+    if entry == 2:
+        is_Loged = False
+        logUser = input("Veuillez entrer votre log-in")
+        for i in biblio.users:
+            if logUser == i.id:
+                psdUser = input("Veuillez entrer votre mdp")
+                if psdUser == i.pwd:
+                    print("Connexion réussie")
+                    is_Loged = True
+
 
 
 
