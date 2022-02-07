@@ -32,6 +32,7 @@ class Library:
             maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
             f.write(maChaine)
 
-    def remove_user(self):
+    def remove_user(self, user):
         with open("list_users.txt", "r+") as f:
-            f.truncate(self)
+            maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
+            f.truncate(maChaine)
