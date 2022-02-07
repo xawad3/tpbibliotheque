@@ -32,13 +32,7 @@ class Users(Person):
 
     def __repr__(self):
         affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow}"
+
         return affiche
 
 
-
-user2 = Users("HArry", "Potter", "ksqfhioreahoier")
-
-#user2.Borrow(book1)
-#print(user2)
-#user2.BackTo("KAKA")
-#print(user2)
