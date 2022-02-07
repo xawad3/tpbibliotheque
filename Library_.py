@@ -19,18 +19,18 @@ class Library:
     def getName(self):
         return self.name
 
-    def add_a_book(self, book):
+    def add_a_book(self):
         with open("list_books.txt", 'a') as f:
-            f.write(book)
+            f.write(self)
 
-    def remove_a_book(self, book):
+    def remove_a_book(self):
         with open("list_books.txt", "r+") as f:
-            f.truncate(book)
+            f.truncate(self)
 
-    def add_user(self, name):
+    def add_user(self):
         with open("list_users.txt", "a") as f:
-            f.write(Users.name)
+            f.write(self)
 
-    def remove_user(self, name):
+    def remove_user(self):
         with open("list_users.txt", "r+") as f:
-            f.truncate(Users.name)
+            f.truncate(self)
