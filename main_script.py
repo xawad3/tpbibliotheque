@@ -1,12 +1,14 @@
 from functions import *
 from Person_ import *
 from Library_ import *
+from Users_ import *
 
 
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
+biblio = Library("Pourdlard")
 
-print("Bienvenue dans la bibliothèque (le nom ?)")
+print("Bienvenue dans la bibliothèque", biblio.name)
 
 
 
@@ -26,8 +28,12 @@ while True:
 
             else:
                 encore = False
-                new = Person(name, first_name, pwd)
-                Library.add_user(new.getMyName())
+                new = Users(name, first_name, pwd)
+                biblio.users.append(new)
+                biblio.add_user(new)
+
+
+
 
 
 

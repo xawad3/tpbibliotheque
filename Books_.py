@@ -34,3 +34,4 @@ book1 = Books("Une Fois trois", "Axelle AUclair", "Français", "Roman D'amour", 
 # book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
 # book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
 print(book1)
+

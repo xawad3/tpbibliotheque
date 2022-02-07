@@ -27,9 +27,10 @@ class Library:
         with open("list_books.txt", "r+") as f:
             f.truncate(self)
 
-    def add_user(self):
+    def add_user(self, user):
         with open("list_users.txt", "a") as f:
-            f.write(self)
+            maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
+            f.write(maChaine)
 
     def remove_user(self):
         with open("list_users.txt", "r+") as f:
