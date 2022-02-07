@@ -6,6 +6,7 @@ class ComicStrip(Books):
     def __init__(self, title, author, language, type, category,color,artist):
         super().__init__(title, author, language, type, category)
         self.color = True
+
         self.color = color
         self.artist = artist
 

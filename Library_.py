@@ -1,7 +1,4 @@
-from Books_ import *
-from Comic_strip import *
 from Users_ import *
-
 
 class Library:
 
@@ -11,30 +8,29 @@ class Library:
         self.author = []
         self.books = []
         self.users = []
-        
+
     def __repr__(self):
-        choix = int(input(f"Ouvrages contenu dans la bibliothèque {self.name}:\nTapez "1" pour l'affichage par catégorie\nTapez "2" pour l'affichage par auteur"))
+        choix = input(f"Ouvrages contenu dans la bibliothèque {self.name}:\nTapez 1 pour l'affichage par catégorie\nTapez 2 pour l'affichage par auteur\n")
         if choix == 1:
             affiche = f"Voici la liste des livres, triés par catégorie: {self.section}"
         if choix == 2:
             affiche = f"Voici la liste des livres, triés par auteurs: {self.author}"
 
-    def getName():
+    def getName(self):
         return self.name
 
-    def add_a_book(book):
+    def add_a_book(self, book):
         with open("list_books.txt", 'a') as f:
             f.write(book)
 
-    def remove_a_book(book):
+    def remove_a_book(self, book):
         with open("list_books.txt", "r+") as f:
             f.truncate(book)
 
-    def add_user(name):
+    def add_user(self, name):
         with open("list_users.txt", "a") as f:
-            f.write(user)
+            f.write(Users.name)
 
-    def remove_user(name):
+    def remove_user(self, name):
         with open("list_users.txt", "r+") as f:
-            f.truncate(user)
-
+            f.truncate(Users.name)

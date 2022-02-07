@@ -1,5 +1,5 @@
 import random
-from Users_ import *
+
 
 
 class Books:
@@ -20,6 +20,7 @@ class Books:
     def __repr__(self):
         affiche = f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est enregistré sous la référence {self.ref}\n"
         return affiche
+
 
 
 book1 = Books("Une Fois trois", "Axelle AUclair", "Français", "Roman D'amour", "Roman")
