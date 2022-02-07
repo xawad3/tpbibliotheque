@@ -1,5 +1,5 @@
 import random
-from Users_ import *
+
 
 class Books:
     def __init__(self, title, author, language, type, category):
@@ -20,5 +20,5 @@ class Books:
         affiche= f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est enregistré sous la référence {self.ref}\n"
         return affiche
 
-book1 = Books("Rama", "Kdik", "english", "SF", "novell")
+#book1 = Books("Rama", "Kdik", "english", "SF", "novell")
 #print (book1)

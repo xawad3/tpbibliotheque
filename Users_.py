@@ -24,7 +24,7 @@ class Users(Person):
 
 
 
-#user2 = Users("HArry", "Potter", "ksqfhioreahoier")
+user2 = Users("HArry", "Potter", "ksqfhioreahoier")
 
 #user2.Borrow(book1)
 #print(user2)

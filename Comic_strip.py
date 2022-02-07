@@ -2,7 +2,7 @@ from Books_ import *
 
 class ComicStrip(Books) :
     def __init__(self, title, author, language, type, category,color, artist):
-        super().__init__(self, title, author, language, type, category)
+        super().__init__(title, author, language, type, category)
         self.color = color
         self.artist = artist
 
