@@ -6,7 +6,7 @@ from Users_ import *
 
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
-choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Se déconnecter"]
+choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
 biblio = Library("Pourdlard")
 
 print("Bienvenue dans la bibliothèque", biblio.name)
@@ -61,9 +61,11 @@ while inscrire:
                     if entry1 == 1:
                         print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
 
-                    if entry == 2:
+                    if entry1 == 2:
                         print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
 
+                    if entry1 == 3:
+                        pass
                     else:
                         print("Vous êtes déconnectez")
 
