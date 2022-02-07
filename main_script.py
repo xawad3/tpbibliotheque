@@ -65,7 +65,7 @@ while inscrire:
                         print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
 
                     if entry1 == 3:
-                        pass
+                        print("La fonctionnalité 'changer le mot de passe'  n'est pas encore disponible ! Bientôt !")
                     else:
                         print("Vous êtes déconnectez")
 
