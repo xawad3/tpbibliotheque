@@ -16,7 +16,7 @@ class Library:
         if choix == 2:
             affiche = f"Voici la liste des livres, triés par auteurs: {self.author}"
 
-    def getName():
+    def getName(self):
         return self.name
 
     def add_a_book(self, book):
