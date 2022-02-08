@@ -31,7 +31,7 @@ class Users(Person):
         self.counter =+ 1
 
     def __repr__(self):
-        affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow}"
+        affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow} son mdp {self.pwd}"
 
         return affiche
 
