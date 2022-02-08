@@ -14,8 +14,8 @@ class Books:
         self.dispo = True
         self.backto = None
 
-    def getTitle(self):
-        return self.title
+    def getRef(self):
+        return self.ref
 
     def __repr__(self):
         affiche = f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est enregistré sous la référence {self.ref}\n"

@@ -43,45 +43,23 @@ class Library:
     def search_author_list(self):
         pass
 
-
     def export_user(self, user):
         with open("list_users.txt", "a") as f:
-            maChaine = user.name + " ; " + user.firstName + " ; " + user.id + " ; " + str(user.rank) + " ; " + str(user.borrow)
+            maChaine = user.name + " ; " + user.firstName + " ; " + user.id + " ; " + str(user.rank) + " ; " + str(user.borrow) + " ; " + str(user.counter)
             if maChaine not in f:
                 f.write(maChaine)
 
-    # def remove_user(self, user):
-    #     with open("list_users.txt", "r+") as f:
-
-    #         maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
-    #         f.truncate(maChaine)
-
-biblio = Library("ABC")
-biblio.add_a_book(book1)
-biblio.add_a_book(book2)
-biblio.add_a_book(book3)
-biblio.add_a_book(book4)
-biblio.add_a_book(book5)
-biblio.export_books()
-print(biblio.books[0].ref)
-input("on vient d'exporter la liste en .txt\" maintenant efface la liste self.books et fait l'import")
-biblio.books = []
-input("normalement la liste self.books est vide")
-print(biblio.books)
-input("je viens d'afficher la liste books, maintenant je lance l'import depuis txt")
-biblio.import_books()
-input("maintenant je tente d'afficher juste les auteurs")
-print(biblio.author)
-input("et là les catégories")
-print(biblio.section)
+    def import_user(self):
+        with open("list_users.txt", 'r') as f:
+            for item in f:
+                maLigne = item.split(" ; ")
+                print(maLigne)
+                self.users.append(Users(maLigne[0],maLigne[1],maLigne[2]))
+                self.users[-1].rank = maLigne[3]
+                for i in (maLigne[-1])[1:-1].split(","):
+                    self.users[-1].borrow.append(i)
+                self.users[-1].counter = maLigne[4]
 
 
-maLigne = "m.prybylo;maxime;przybylo;Azerty77;999999;[HJ1924893,AR9248837]"  
-mesEmprunts = []  
-#maLigne.split(";") permet de créer une liste en divisant ma chaine de caractère par ";" 
-#maLigne.split(";")[-1] permet de recupérer la derniere "case" en tant que str 
-#maLigne.split(";")[-1][1:-1] permet de ne garder que du deuxieme caractère (inclus) au dernier (non inclus) 
-#le dernier split permet de créer une liste en divisant mes ref par "," 
-for i in (maLigne.split(";")[-1])[1:-1].split(","):     
-  mesEmprunts.append(i)  
-  print(mesEmprunts)
+  
+

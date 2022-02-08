@@ -13,7 +13,7 @@ class Users(Person):
         self.counter = 0
         self.borrow = []
 
-    def rank_up(self):
+    def Rank_up(self):
         if self.counter < 10:
             self.rank = 0
         elif self.counter > 100:
@@ -21,17 +21,15 @@ class Users(Person):
         else:
             self.rank = len(self.counter)[0]
 
-    def Borrow(self):
-        self.book = book.getTitle()
-        self.borrow.append(book)
+    def Borrow(self, book):
+        self.borrow.append(book.getRef())
 
     def BackTo(self, book):
-        self.book = book.getTitle()
-        self.borrow.remove(book)
-        self.counter =+ 1
+        self.borrow.remove(book.getRef())
+        self.counter += 1
 
     def __repr__(self):
-        affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow}"
+        affiche = f"{self.name} {self.firstName} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow} son mdp {self.pwd}"
 
         return affiche
 
