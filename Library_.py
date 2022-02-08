@@ -1,5 +1,5 @@
 from Users_ import *
-
+from Books_ import *
 class Library:
 
     def __init__(self, name):
@@ -19,20 +19,33 @@ class Library:
     def getName(self):
         return self.name
 
-    def add_a_book(self):
-        with open("list_books.txt", 'a') as f:
-            f.write(self)
+    def add_a_book(self, b):
+        self.books.append(b)
+        
+    def export_books(self):
+        with open('list_books.txt', 'w') as f:
+            for item in self.books:
+                f.write(str(item.title) +" ; "+ str(item.author) +" ; "+ str(item.language) +" ; "+ str(item.category) +" ; "+ str(item.ref)+"\n")
 
-    def remove_a_book(self):
-        with open("list_books.txt", "r+") as f:
-            f.truncate(self)
+    def import_books(self):
+        with open("list_books.txt", 'r') as f:
+            for line in f:
+                #importer les elements line.title etc... et ensuite append l'objet
+                self.books.append(line)
 
     def add_user(self, user):
         with open("list_users.txt", "a") as f:
-            maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
+            maChaine = user.name + ";" + user.firstName + ";" + user.id + ";" + str(user.rank) + ";" + str(user.borrow)
             f.write(maChaine)
 
     def remove_user(self, user):
         with open("list_users.txt", "r+") as f:
+
             maChaine = user.name + ";" + user.firstName + ";" + user.id + "." + str(user.rank) + ";" + user.borrow
             f.truncate(maChaine)
+
+biblio = Library("ABC")
+biblio.add_a_book(book1)
+biblio.add_a_book(book2)
+biblio.add_a_book(book3)
+biblio.export_books()

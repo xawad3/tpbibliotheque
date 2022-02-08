@@ -24,8 +24,8 @@ class Books:
 
 
 book1 = Books("Une Fois trois", "Axelle AUclair", "Français", "Roman D'amour", "Roman")
-# book2 = Books("Maudite", "C. Sizel", "Français", "Fantasy", "Roman")
-# book3 = Books("Au café de la ville perdue", "Anaïs Llobet", "Français", "Littérature Française", "Roman")
+book2 = Books("Maudite", "C. Sizel", "Français", "Fantasy", "Roman")
+book3 = Books("Au café de la ville perdue", "Anaïs Llobet", "Français", "Littérature Française", "Roman")
 # book4 = Books("Légendes et contes traditionnels de l'Inde", "Catherine Clément", "Français", "Non-Fiction", "Roman")
 # book5 = Books("Nouvelles histoires extraordinaires", "Edgar Allan Poe", "Français", "Fantastique", "Nouvelles")
 # book6 = Books("Poésies Complètes", "Arthur Rimbaud", "Français", "Littérature", "Poèmes")
