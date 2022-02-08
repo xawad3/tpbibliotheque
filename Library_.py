@@ -29,10 +29,9 @@ class Library:
 
     def export_user(self, user):
         with open("list_users.txt", "a") as f:
-            maChaine = user.name + ";" + user.firstName + ";" + user.id + ";" + str(user.rank) + ";" + str(user.borrow)
+            maChaine = user.name + " ; " + user.firstName + " ; " + user.id + " ; " + str(user.rank) + " ; " + str(user.borrow)
             f.write(maChaine)
 
-    def remove_user(self, user):
-        with open("list_users.txt", "r+") as f:
-            maChaine = user.name + ";" + user.firstName + ";" + user.id + ";" + str(user.rank) + ";" + str(user.borrow)
-            f.truncate(maChaine)
+    #def remove_user(self, user):
+        #with open("list_users.txt", "r+") as f:
+            #f.truncate(maChaine)
