@@ -29,9 +29,16 @@ class Library:
 
     def import_books(self):
         with open("list_books.txt", 'r') as f:
-            for line in f:
-                #importer les elements line.title etc... et ensuite append l'objet
-                self.books.append(line)
+            for item in f:
+                maLigne = item.split(" ; ")
+                print(maLigne)
+                self.books.append(Books(maLigne[0],maLigne[1],maLigne[2],maLigne[3],maLigne[4]))
+                if maLigne[1] not in self.author:
+                    self.author.append(maLigne[1])
+                if maLigne[3] not in self.section:
+                    self.section.append(maLigne[3])
+                # it works, reste à eviter les doublons
+                
 
     def add_user(self, user):
         with open("list_users.txt", "a") as f:
@@ -48,4 +55,16 @@ biblio = Library("ABC")
 biblio.add_a_book(book1)
 biblio.add_a_book(book2)
 biblio.add_a_book(book3)
+biblio.add_a_book(book4)
+biblio.add_a_book(book5)
 biblio.export_books()
+input("on vient d'exporter la liste en .txt\" maintenant efface la liste self.books et fait l'import")
+biblio.books = []
+input("normalement la liste self.books est vide")
+print(biblio.books)
+input("je viens d'afficher la liste books, maintenant je lance l'import depuis txt")
+biblio.import_books()
+input("maintenant je tente d'afficher juste les auteurs")
+print(biblio.author)
+input("et là les catégories")
+print(biblio.section)
