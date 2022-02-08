@@ -4,21 +4,21 @@ import random
 
 class Books:
 
-    def __init__(self, title, author, language, type, category):
-        self.title = title
-        self.author = author
-        self.language = language
-        self.type = type
-        self.category = category
-        self.ref = title[0] + author[0] + str(random.randint(0, 100000))
+    def __init__(self, title_book, author_book, language_book, type_book, category_book):
+        self.title_book = title_book
+        self.author_book = author_book
+        self.language_book = language_book
+        self.type_book = type_book #roman, nouvelles etc
+        self.category_book = category_book #fantastique, polar etc
+        self.ref_book = title_book[0] + author_book[0] + str(random.randint(0, 100000))
         self.dispo = True
         self.backto = None
 
     def getRef(self):
-        return self.ref
+        return self.ref_book
 
     def __repr__(self):
-        affiche = f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est enregistré sous la référence {self.ref}\n"
+        affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est enregistré sous la référence {self.ref_book}\n"
         return affiche
 
 

@@ -2,7 +2,7 @@ from functions import *
 from Person_ import *
 from Library_ import *
 from Users_ import *
-from Books_ import *
+
 
 
 
@@ -10,12 +10,12 @@ choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
 biblio = Library("Pourdlard")
 user1 = Users("Potter", "Harry", "drago")
-biblio.users.append(user1)
+biblio.users_list.append(user1)
 user1.Borrow(book1)
 print(user1)
 
 
-print("Bienvenue dans la bibliothèque", biblio.name)
+print("Bienvenue dans la bibliothèque", biblio.name_library)
 
 
 inscrire = True
@@ -37,11 +37,11 @@ while inscrire:
 
         new = Users(name, first_name, pwd)
         print("Votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
-        biblio.users.append(new)
+        biblio.users_list.append(new)
         biblio.export_user(new)
     ###----fin enregistrement d'un utilisateur----##
 
-    print(biblio.users)
+    print(biblio.users_list)
 
     ###----début connexion d'un utilisateur----###
     if entry == 2:
@@ -50,7 +50,7 @@ while inscrire:
         logUser = input("Veuillez entrer votre log-in")
         psdUser = input("Veuillez entrer votre mdp")
         compteur = 0
-        while not verif_user(biblio.users, logUser, psdUser):
+        while not verif_user(biblio.users_list, logUser, psdUser):
             compteur += 1
             print("Identifiant ou mot de passe incorrect !")
             logUser = input("Veuillez entrer votre log-in")
@@ -80,7 +80,7 @@ while inscrire:
                 changement = True
                 mdp = input("Entrez votre mot mot de passe actuel")
                 compteur  = 0
-                while not verif_user(biblio.users, logUser, mdp):
+                while not verif_user(biblio.users_list, logUser, mdp):
                     compteur += 1
                     mdp = input("Entrez votre mot mot de passe actuel")
                     if compteur > 2:
@@ -89,7 +89,7 @@ while inscrire:
                         break
                 if changement:
                     new_mdp = input("Entrez votre nouveau mot de passe")
-                    changement_mdp(biblio.users, logUser, new_mdp)
+                    changement_mdp(biblio.users_list, logUser, new_mdp)
                     print("Changement mdp réussi")
 
 

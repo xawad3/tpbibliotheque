@@ -3,15 +3,14 @@ from Books_ import *
 
 class ComicStrip(Books):
 
-    def __init__(self, title, author, language, type, category,color,artist):
-        super().__init__(title, author, language, type, category)
+    def __init__(self, title_book, author_book, language_book, type_book, category_book , color_comic , artist_comic):
+        super().__init__(title_book, author_book, language_book, type_book, category_book)
         self.color = True
-
-        self.color = color
-        self.artist = artist
+        self.color_comic = color_comic
+        self.artist_comic = artist_comic
 
     def __repr__(self):
-        affiche = f"Le livre {self.title} de l'auteur {self.author} en {self.language} du genre {self.type} de la catégorie {self.category} est une bande déssinée en {self.color} dessinée par {self.artist}\n"
+        affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est une bande déssinée en {self.color_comic} dessinée par {self.artist_comic}\n"
         return affiche
 
 
