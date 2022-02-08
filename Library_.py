@@ -27,7 +27,7 @@ class Library:
         with open("list_books.txt", "r+") as f:
             f.truncate(self)
 
-    def add_user(self, user):
+    def export_user(self, user):
         with open("list_users.txt", "a") as f:
             maChaine = user.name + ";" + user.firstName + ";" + user.id + ";" + str(user.rank) + ";" + str(user.borrow)
             f.write(maChaine)
