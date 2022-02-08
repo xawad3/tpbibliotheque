@@ -2,6 +2,7 @@ from functions import *
 from Person_ import *
 from Library_ import *
 from Users_ import *
+from Books_ import *
 
 
 
@@ -10,6 +11,7 @@ choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", 
 biblio = Library("Pourdlard")
 user1 = Users("Potter", "Harry", "drago")
 biblio.users.append(user1)
+user1.Borrow(book1)
 print(user1)
 
 
