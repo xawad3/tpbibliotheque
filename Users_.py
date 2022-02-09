@@ -21,8 +21,8 @@ class Users(Person):
         else:
             self.rank = len(self.counter_rank)[0]
 
-    def Borrow(self, book):
-        self.borrow.append(book.getRef())
+    def Borrow(self, ref):
+        self.borrow.append(ref)
 
     def BackTo(self, book):
         self.borrow.remove(book.getRef())

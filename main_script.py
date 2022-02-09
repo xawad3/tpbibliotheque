@@ -19,7 +19,7 @@ biblio.add_a_book(book3)
 
 user1 = Users("Potter", "Harry", "drago")
 biblio.users_list.append(user1)
-user1.Borrow(book1)
+user1.Borrow(book1.ref_book)
 print(user1)
 
 
@@ -82,7 +82,8 @@ while inscrire:
                 elif entry1 == 1:
                     print(f"Voici la liste des livres que vous pouvez emprunter {biblio.books_list}" )
                     new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n"))
-
+                    user1.Borrow(new_borrow)
+                    print(user1.borrow)
 
                 elif entry1 == 2:
                     print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
