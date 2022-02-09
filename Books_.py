@@ -15,9 +15,9 @@ class Books:
     def getRef(self):
         return self.ref_book
 
-    def __repr__(self):
-        affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est enregistré sous la référence {self.ref_book}\n"
-        return affiche
+    # def __repr__(self):
+    #     affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est enregistré sous la référence {self.ref_book}\n"
+    #     return affiche
 
 book1 = Books("Une Fois trois", "Auclair Axelle", "Français", "Roman D'amour", "Roman")
 book2 = Books("Maudite", "Sizel C.", "Français", "Fantasy", "Roman")

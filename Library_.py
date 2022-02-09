@@ -1,5 +1,6 @@
 from Users_ import *
 from Books_ import *
+from functions import *
 class Library:
 
     def __init__(self, name_library):
@@ -29,7 +30,7 @@ class Library:
     def export_books(self):
         with open('list_books.txt', 'w') as f:
             for item in self.books_list:
-                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) + "\n")
+                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ "\n")
 
 # Importation des livres du .txt => books_list
 # ============================================
@@ -39,6 +40,7 @@ class Library:
                 maLigne = item.split(" ; ")
                 self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
                 self.books_list[-1].ref_book = maLigne[5]
+                self.books_list[-1].dispo = maLigne[6]
                 if maLigne[1] not in self.author_list:
                     self.author_list.append(maLigne[1])
                 if maLigne[4] not in self.section_list:
@@ -48,11 +50,12 @@ class Library:
 # Affiche la liste des auteurs dans l'ordre alphabétique
 # ======================================================
     def search_author_list(self):
-        author_temp_list = []
-        for i in self.books_list:
-            author_temp_list.append(i.author_book)
-            author_temp_list.sort()
-        print(author_temp_list)
+        # author_temp_list = []
+        # for i in self.books_list:
+        #     author_temp_list.append(i.author_book)
+        #     author_temp_list.sort()
+        self.author_list = sorted(self.author_list)
+        Menu(self.author_list)
 
 # Affiche la liste des Livres par ordre alphabétique
 # ==================================================
@@ -61,8 +64,14 @@ class Library:
         for i in self.books_list:
             books_temp_list.append(i.title_book)
             books_temp_list.sort()
-        print(books_temp_list)
+        Menu(books_temp_list)
 
+# Affichage des livres par auteur
+# ===============================
+    def books_by_author(self,a):
+        for i in self.books_list:
+            if i.author_book == self.author_list[int(a)]:
+                print(i.title_book, i.ref_book)
 
     def export_user(self, user):
         with open("list_users.txt", "a") as f:
@@ -81,20 +90,3 @@ class Library:
                 for i in (maLigne[-1])[1:-1].split(","):
                     self.users_list[-1].borrow.append(i)
                 self.users_list[-1].counter = maLigne[4]
-
-biblio = Library("ABC")
-# biblio.add_a_book(book1)
-# biblio.add_a_book(book2)
-# biblio.add_a_book(book3)
-# biblio.add_a_book(book4)
-# biblio.add_a_book(book5)
-# biblio.add_a_book(book6)
-# biblio.add_a_book(book7)
-# biblio.add_a_book(book8)
-# biblio.add_a_book(book9)
-# biblio.add_a_book(book10)
-# biblio.export_books()
-# biblio.books_list = []
-biblio.import_books() 
-biblio.search_author_list()
-biblio.search_books_list()
