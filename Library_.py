@@ -54,6 +54,15 @@ class Library:
             author_temp_list.sort()
         print(author_temp_list)
 
+# Affiche la liste des Livres par ordre alphabétique
+# ==================================================
+    def search_books_list(self):
+        books_temp_list = []
+        for i in self.books_list:
+            books_temp_list.append(i.title_book)
+            books_temp_list.sort()
+        print(books_temp_list)
+
 
     def export_user(self, user):
         with open("list_users.txt", "a") as f:
@@ -88,3 +97,4 @@ biblio = Library("ABC")
 # biblio.books_list = []
 biblio.import_books() 
 biblio.search_author_list()
+biblio.search_books_list()
