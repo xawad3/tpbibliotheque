@@ -73,11 +73,12 @@ class Library:
             if i.author_book == self.author_list[int(a)]:
                 print(i.title_book, i.ref_book)
 
-    def export_user(self, user):
-        with open("list_users.txt", "a") as f:
-            maChaine = user.name_user + " ; " + user.first_name_user + " ; " + user.id + " ; " + str(user.rank) + " ; " + str(user.borrow) + " ; " + str(user.counter_rank)
-            if maChaine not in f:
-                f.write(maChaine)
+    def export_users(self):
+        with open('list_users.txt', 'w') as f:
+            for item in self.users_list:
+                f.write(str(item.name_user) + " ; " + str(item.first_name_user) + " ; " + str(
+                    item.pwd) + " ; " + str(item.rank) + " ; " + str(item.counter_rank) + " ; " + str(
+                    item.borrow) + "\n")
 
 
     def import_user(self):
