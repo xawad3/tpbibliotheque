@@ -25,7 +25,7 @@ while inscrire:
     ###----début enregistrement d'un utilisateur----###
     if entry == 0:
         print("La fonctionnalité 'recherche un livre' n'est pas encore disponible ! Bientôt !")
-    if entry == 1:
+    elif entry == 1:
         name = input("Quel est votre nom ?\n")
         first_name = input("Quel est votre prénom ?\n")
         pwd = input("Choisissez un mot de passe: \n")
@@ -41,10 +41,10 @@ while inscrire:
         biblio.export_users()
     ###----fin enregistrement d'un utilisateur----##
 
-    print(biblio.users_list)
+
 
     ###----début connexion d'un utilisateur----###
-    if entry == 2:
+    elif entry == 2:
         inscrire = False
         connexion = True
         logUser = input("Veuillez entrer votre log-in")
@@ -63,44 +63,49 @@ while inscrire:
         if connexion:
             print("Connexion réussie")
 
-    ###----fin connexion d'un utilisateur----###
+
             infini = True
-            Menu(choice1)
-            entry1 = int(input("Que voulez-vous faire ?"))
-            if entry1 == 0:
-                print("La fonctionnalité 'rechercher un livre'  n'est pas encore disponible ! Bientôt !")
+            while infini:
+                Menu(choice1)
+                entry1 = int(input("Que voulez-vous faire ?"))
+                if entry1 == 0:
+                    print("La fonctionnalité 'rechercher un livre'  n'est pas encore disponible ! Bientôt !")
 
-            if entry1 == 1:
-                print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
+                elif entry1 == 1:
+                    print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
 
-            if entry1 == 2:
-                print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
+                elif entry1 == 2:
+                    print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
 
-            if entry1 == 3:
-                changement = True
-                mdp = input("Entrez votre mot mot de passe actuel")
-                compteur  = 0
-                while not verif_user(biblio.users_list, logUser, mdp):
-                    compteur += 1
+                elif entry1 == 3:
+                    changement = True
                     mdp = input("Entrez votre mot mot de passe actuel")
-                    if compteur > 2:
-                        changement = False
-                        print("Au revoir !")
-                        break
-                if changement:
-                    new_mdp = input("Entrez votre nouveau mot de passe")
-                    changement_mdp(biblio.users_list, logUser, new_mdp)
-                    print("Changement mdp réussi")
+                    compteur  = 0
+                    while not verif_user(biblio.users_list, logUser, mdp):
+                        compteur += 1
+                        mdp = input("Entrez votre mot mot de passe actuel")
+                        if compteur > 2:
+                            changement = False
+                            print("Au revoir !")
+                            break
+                        if changement:
+                            new_mdp = input("Entrez votre nouveau mot de passe")
+                            changement_mdp(biblio.users_list, logUser, new_mdp)
+                            print("Changement mdp réussi")
 
 
-            else:
-                print("Vous êtes déconnectez")
+                else:
+                    infini = False
+                    print("Vous êtes déconnectez")
+                    inscrire = True
 
 
+            ###----fin connexion d'un utilisateur----###
 
 
 
 print(user1)
+print(biblio.users_list)
 
 
 
