@@ -1,3 +1,4 @@
+# from dbm.ndbm import library
 from functions import *
 from Person_ import *
 from Library_ import *
@@ -9,6 +10,13 @@ from Users_ import *
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
 biblio = Library("Pourdlard")
+
+# Ajout de livre dans la biblio pour la matière
+biblio.add_a_book(book1)
+biblio.add_a_book(book2)
+biblio.add_a_book(book3)
+#
+
 user1 = Users("Potter", "Harry", "drago")
 biblio.users_list.append(user1)
 user1.Borrow(book1)
@@ -72,7 +80,9 @@ while inscrire:
                     print("La fonctionnalité 'rechercher un livre'  n'est pas encore disponible ! Bientôt !")
 
                 elif entry1 == 1:
-                    print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
+                    print(f"Voici la liste des livres que vous pouvez emprunter {biblio.books_list}" )
+                    new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n"))
+
 
                 elif entry1 == 2:
                     print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
