@@ -19,7 +19,8 @@ class Users(Person):
         elif self.counter_rank > 100:
             self.rank = "10, Rang Max"
         else:
-            self.rank = len(self.counter_rank)[0]
+            rank_temp = str(self.counter_rank)
+            self.rank = rank_temp[0]
 
     def Borrow(self, book):
         self.borrow.append(book.getRef())

@@ -45,9 +45,14 @@ class Library:
                     self.section_list.append(maLigne[4])
                 self.books_list[-1].ref = maLigne[5]
             
+# Affiche la liste des auteurs dans l'ordre alphabétique
+# ======================================================
     def search_author_list(self):
+        author_temp_list = []
         for i in self.books_list:
-            print(i.author_book)
+            author_temp_list.append(i.author_book)
+            author_temp_list.sort()
+        print(author_temp_list)
 
 
     def export_user(self, user):
@@ -69,23 +74,17 @@ class Library:
                 self.users_list[-1].counter = maLigne[4]
 
 biblio = Library("ABC")
-biblio.add_a_book(book1)
-biblio.add_a_book(book2)
-biblio.search_author_list()
-
-
-# input("Je vais print books_list qui contient book1&2")
-# print(biblio.books_list)
-# input("Voilà, maintenant je vais l'exporter sur le .txt")
+# biblio.add_a_book(book1)
+# biblio.add_a_book(book2)
+# biblio.add_a_book(book3)
+# biblio.add_a_book(book4)
+# biblio.add_a_book(book5)
+# biblio.add_a_book(book6)
+# biblio.add_a_book(book7)
+# biblio.add_a_book(book8)
+# biblio.add_a_book(book9)
+# biblio.add_a_book(book10)
 # biblio.export_books()
-# input("jusque là tout va bien... j'efface la books_list")
 # biblio.books_list = []
-# print(biblio.books_list)
-# input("Là j'importe depuis le .txt pour remplir book_list, author_list et section_list")
-# biblio.import_books()
-# input("la books_list:")
-# print(biblio.books_list)
-# input("la author_list:")
-# print(biblio.author_list)
-# input("la section_list:")
-# print(biblio.section_list)
+biblio.import_books() 
+biblio.search_author_list()
