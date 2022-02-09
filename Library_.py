@@ -1,40 +1,66 @@
-from Books_ import *
-from Comic_strip import *
 from Users_ import *
-
-
+from Books_ import *
 class Library:
 
-    def __init__(self, name):
-        self.name = name
-        self.section = []
-        self.author = []
-        self.books = []
-        self.users = []
-        
+    def __init__(self, name_library):
+        self.name_library = name_library
+        self.section_list = []
+        self.author_list = []
+        self.books_list = []
+        self.users_list = []
+
     def __repr__(self):
-        choix = int(input(f"Ouvrages contenu dans la bibliothèque {self.name}:\nTapez "1" pour l'affichage par catégorie\nTapez "2" pour l'affichage par auteur"))
+        choix = input(f"Ouvrages contenu dans la bibliothèque {self.name_library}:\nTapez 1 pour l'affichage par catégorie\nTapez 2 pour l'affichage par auteur\n")
         if choix == 1:
-            affiche = f"Voici la liste des livres, triés par catégorie: {self.section}"
+            affiche = f"Voici la liste des livres, triés par catégorie: {self.section_list}"
         if choix == 2:
-            affiche = f"Voici la liste des livres, triés par auteurs: {self.author}"
+            affiche = f"Voici la liste des livres, triés par auteurs: {self.author_list}"
 
-    def getName():
-        return self.name
+    def getName(self):
+        return self.name_library
 
-    def add_a_book(book):
-        with open("list_books.txt", 'a') as f:
-            f.write(book)
+    def add_a_book(self, b):
+        self.books_list.append(b)
+        
+    def export_books(self):
+        with open('list_books.txt', 'w') as f:
+            for item in self.books_list:
+                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) + "\n")
+                pass
 
-    def remove_a_book(book):
-        with open("list_books.txt", "r+") as f:
-            f.truncate(book)
+    def import_books(self):
+        with open("list_books.txt", 'r') as f:
+            for item in f:
+                maLigne = item.split(" ; ")
+                self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4],ref_book=maLigne[5]))
+                if maLigne[1] not in self.author_list:
+                    self.author_list.append(maLigne[1])
+                if maLigne[3] not in self.section_list:
+                    self.section_list.append(maLigne[3])
+                self.books_list[-1].ref = maLigne[5]
+            
+                
 
-    def add_user(name):
+    def search_author_list(self):
+        pass
+
+    def export_user(self, user):
         with open("list_users.txt", "a") as f:
-            f.write(user)
+            maChaine = user.name_user + " ; " + user.first_name_user + " ; " + user.id + " ; " + str(user.rank) + " ; " + str(user.borrow) + " ; " + str(user.counter_rank)
+            if maChaine not in f:
+                f.write(maChaine)
 
-    def remove_user(name):
-        with open("list_users.txt", "r+") as f:
-            f.truncate(user)
+    def import_user(self):
+        with open("list_users.txt", 'r') as f:
+            for item in f:
+                maLigne = item.split(" ; ")
+                print(maLigne)
+                self.users_list.append(Users(maLigne[0],maLigne[1],maLigne[2]))
+                self.users_list[-1].rank = maLigne[3]
+                for i in (maLigne[-1])[1:-1].split(","):
+                    self.users_list[-1].borrow.append(i)
+                self.users_list[-1].counter = maLigne[4]
+
+
+  
 
