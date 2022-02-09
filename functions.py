@@ -31,3 +31,6 @@ def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des use
         if log == i.id: #on vérifie que l'id de l'user est le bon et on change son mdp
             i.pwd = pwd
 
+
+
+
