@@ -38,7 +38,6 @@ while inscrire:
         new = Users(name, first_name, pwd)
         print("Votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
         biblio.users_list.append(new)
-        biblio.export_user(new)
     ###----fin enregistrement d'un utilisateur----##
 
     print(biblio.users_list)
