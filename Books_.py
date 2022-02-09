@@ -19,6 +19,9 @@ class Books:
     def getNameBook(self):
         return self.title_book
 
+    def noDispo(self):
+        self.dispo = False
+
 
     def __repr__(self):
         affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est enregistré sous la référence {self.ref_book}\n"

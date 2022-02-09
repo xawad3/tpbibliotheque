@@ -24,6 +24,7 @@ class Users(Person):
     def Borrow(self, ref):
         self.borrow.append(ref)
 
+
     def BackTo(self, book):
         self.borrow.remove(book.getRef())
         self.counter_rank += 1

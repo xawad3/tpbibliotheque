@@ -83,6 +83,7 @@ while inscrire:
                     print(f"Voici la liste des livres que vous pouvez emprunter {biblio.books_list}" )
                     new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n"))
                     user1.Borrow(new_borrow)
+
                     print(user1.borrow)
 
                 elif entry1 == 2:
