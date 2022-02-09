@@ -32,7 +32,7 @@ while inscrire:
         #test = longeurmdp(pwd)
         while not longeurmdp(pwd):
 
-            pwd = input("Choisisser un mot de passe")
+            pwd = input("Votre mot de passe doit faire au moins 5 caractères")
 
 
         new = Users(name, first_name, pwd)
