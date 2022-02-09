@@ -2,7 +2,7 @@
 
 def Menu(a): #on rentre en paramètre une liste de choix
     for i in range(len(a)):
-        print(f"{i} : {a[i]}") #on affiche les choix présents dans la liste et leur index respectif.
+        print(f"{i}: {a[i]}") #on affiche les choix présents dans la liste et leur index respectif.
 
 
 ##---fontion pour vérifier la laongueur du mdp---##
