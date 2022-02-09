@@ -1,7 +1,6 @@
 import random
 
 
-
 class Books:
 
     def __init__(self, title_book, author_book, language_book, type_book, category_book):
