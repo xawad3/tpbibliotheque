@@ -17,11 +17,11 @@ print(user1)
 
 print("Bienvenue dans la bibliothèque", biblio.name_library)
 
-
 inscrire = True
 while inscrire:
     Menu(choice)
     entry = input("Que voulez-vous faire ?")
+
     try:
         entry = int(entry)
     except ValueError:
