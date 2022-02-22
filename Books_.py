@@ -1,4 +1,8 @@
 import random
+import datetime
+import locale
+
+locale.setlocale(locale.LC_TIME, '')
 
 
 class Books:
@@ -23,8 +27,16 @@ class Books:
         self.dispo = False
 
 
+    def dateBackto(self):
+        self.backto = datetime.date.today() + datetime.timedelta(days=15)
+        return datetime.date.strftime(self.backto, "%A %d %B %Y")
+
+
     def __repr__(self):
-        affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} en {self.language_book} du genre {self.type_book} de la catégorie {self.category_book} est enregistré sous la référence {self.ref_book}\n"
+        if self.dispo == True :
+            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} est enregistré sous la référence {self.ref_book} et en ce moment le livre est disponible à l'emprunt\n"
+        else :
+            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} est enregistré sous la référence {self.ref_book} et en ce moment le livre n'est pas disponible à l'emprunt\n"
         return affiche
 
 
