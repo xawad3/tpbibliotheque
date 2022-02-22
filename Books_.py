@@ -31,12 +31,16 @@ class Books:
         self.backto = datetime.date.today() + datetime.timedelta(days=15)
         return datetime.date.strftime(self.backto, "%A %d %B %Y")
 
+    def extendBorrow(self, days):
+        self.backto = self.backto + datetime.timedelta(days=int(days))
+        return self.backto
+
 
     def __repr__(self):
         if self.dispo == True :
-            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} est enregistré sous la référence {self.ref_book} et en ce moment le livre est disponible à l'emprunt\n"
+            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} est disponible à l'emprunt\n"
         else :
-            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book} est enregistré sous la référence {self.ref_book} et en ce moment le livre n'est pas disponible à l'emprunt\n"
+            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} n'est pas disponible à l'emprunt\n"
         return affiche
 
 
@@ -46,10 +50,10 @@ book2 = Books("Maudite", "C. Sizel", "Français", "Fantasy", "Roman")
 book3 = Books("Au café de la ville perdue", "Anaïs Llobet", "Français", "Littérature Française", "Roman")
 book4 = Books("Légendes et contes traditionnels de l'Inde", "Catherine Clément", "Français", "Non-Fiction", "Roman")
 book5 = Books("Nouvelles histoires extraordinaires", "Edgar Allan Poe", "Français", "Fantastique", "Nouvelles")
-# book6 = Books("Poésies Complètes", "Arthur Rimbaud", "Français", "Littérature", "Poèmes")
-# book7 = Books("Numéro 2", "David Foenkinos", "Français", "Drame", "Roman")
-# book8 = Books("La décision", "Karine Tuil", "Français", "Témoignage", "Roman")
-# book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
-# book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
+book6 = Books("Poésies Complètes", "Arthur Rimbaud", "Français", "Littérature", "Poèmes")
+book7 = Books("Numéro 2", "David Foenkinos", "Français", "Drame", "Roman")
+book8 = Books("La décision", "Karine Tuil", "Français", "Témoignage", "Roman")
+book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
+book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
 print(book1)
 
