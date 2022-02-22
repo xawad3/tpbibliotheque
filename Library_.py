@@ -68,10 +68,51 @@ class Library:
 
 # Affichage des livres par auteur
 # ===============================
-    def books_by_author(self,a):
+    def books_by_author(self, x):
+        author = []
         for i in self.books_list:
-            if i.author_book == self.author_list[int(a)]:
-                print(i.title_book, i.ref_book)
+            if x in i.author_book:
+                if not i.author_book in author:
+                    author.append(i.author_book)
+        if len(author) > 1:
+            Menu(author)
+            choix = input("Choisissez votre auteur(le numéro)")
+            auteur_choix = author[int(choix)]
+            self.books_by_author(auteur_choix)
+
+        else:
+            for i in self.books_list:
+                if i.author_book == author[0]:
+                    print(i.title_book, i.ref_book)
+
+    def books_by_title(self, x):
+        title = []
+        for i in self.books_list:
+            if x in i.title_book:
+                title.append(i.title_book + " : " + i.ref_book)
+        Menu(title)
+
+
+    def books_by_type(self, x):
+        type = []
+        for i in self.books_list:
+            if x in i.type_book:
+                type.append(i.title_book + " : " + i.ref_book)
+        Menu(type)
+
+    def books_by_category(self, x):
+        category = []
+        for i in self.books_list:
+            if x in i.category_book:
+                category.append(i.title_book + " : " + i.ref_book)
+        Menu(category)
+
+    def books_by_language(self, x):
+        language = []
+        for i in self.books_list:
+            if x in i.language_book:
+                language.append(i.title_book + " : " + i.ref_book)
+        Menu(language)
 
     def export_users(self):
         with open('list_users.txt', 'w') as f:
@@ -91,3 +132,7 @@ class Library:
                 for i in (maLigne[-1])[1:-1].split(","):
                     self.users_list[-1].borrow.append(i)
                 self.users_list[-1].counter = maLigne[4]
+
+
+
+

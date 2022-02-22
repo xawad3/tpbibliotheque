@@ -29,5 +29,6 @@ book7 = Books("Numéro 2", "Foenkinos David", "Français", "Drame", "Roman")
 book8 = Books("La décision", "Tuil Karine", "Français", "Témoignage", "Roman")
 book9 = Books("Anéantir", "Houellebecq Michel", "Français", "Anticipation", "Roman")
 book10 = Books("Celui qui veille la nuit", "Erdrich Louise", "Français", "Roman Historique", "Roman")
+book12 = Books("OKE", "Rimbaud Louise", "Français", "Roman Historique", "Roman")
 
 

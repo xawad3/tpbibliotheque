@@ -9,9 +9,18 @@ import time
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
+choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre" "Par langue"]
 biblio = Library("Pourdlard")
 user1 = Users("Potter", "Harry", "drago")
 biblio.users_list.append(user1)
+biblio.add_a_book(book1)
+biblio.add_a_book(book2)
+biblio.add_a_book(book3)
+biblio.add_a_book(book4)
+biblio.add_a_book(book5)
+biblio.add_a_book(book6)
+biblio.add_a_book(book7)
+biblio.add_a_book(book12)
 user1.Borrow(book1)
 print(user1)
 
@@ -35,6 +44,7 @@ while inscrire:
     while ok:
         ###----début enregistrement d'un utilisateur----###
         if entry == 0:
+            biblio.books_by_author(input("Ecrivez le nom de l'auteur"))
             print("La fonctionnalité 'recherche un livre' n'est pas encore disponible ! Bientôt !")
         elif entry == 1:
             name = input("Quel est votre nom ?\n")
@@ -97,7 +107,24 @@ while inscrire:
 
                     while ok:
                         if entry == 0:
-                            print("La fonctionnalité 'rechercher un livre'  n'est pas encore disponible ! Bientôt !")
+                            Menu(choice2)
+                            choix = int(input("Comment souhaitez vous rechercher votre livre ?"))
+                            if choix == 0:
+                                biblio.books_by_author(input("Ecrivez le nom de l'auteur"))
+
+                            elif choix == 1:
+                                biblio.books_by_type(input("Ecrivez le nom de du genre"))
+
+                            elif choix == 2:
+                                biblio.books_by_category(input("Ecrivez le nom de la catégorie"))
+
+                            elif choix == 3:
+                                biblio.books_by_title(input("Ecrivez le titre du livre"))
+
+                            else:
+                                biblio.books_by_language(input("Ecrivez la langue du livre"))
+
+
 
                         elif entry == 1:
                             print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
