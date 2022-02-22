@@ -2,6 +2,7 @@ from functions import *
 from Person_ import *
 from Library_ import *
 from Users_ import *
+import time
 
 
 
@@ -14,13 +15,14 @@ biblio.users_list.append(user1)
 user1.Borrow(book1)
 print(user1)
 
-
+print("————————————————————————————————————")
 print("Bienvenue dans la bibliothèque", biblio.name_library)
+print("————————————————————————————————————")
 
 inscrire = True
 while inscrire:
     Menu(choice)
-    entry = input("Que voulez-vous faire ?")
+    entry = input("Que voulez-vous faire ?\n")
 
     try:
         entry = int(entry)
@@ -41,11 +43,14 @@ while inscrire:
             #test = longeurmdp(pwd)
             while not longeurmdp(pwd):
 
-                pwd = input("Votre mot de passe doit faire au moins 5 caractères veuillez retaper un mot de passe")
+                pwd = input("Votre mot de passe doit faire au moins 5 caractères veuillez retaper un mot de passe correct.")
 
-
+            print("Un instant nous vérifions vos informations ...")
+            print("————————————————————————————————————")
+            time.sleep(1)
             new = Users(name, first_name, pwd)
-            print("Votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
+            print("Félicitations votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
+            print("————————————————————————————————————")
             biblio.users_list.append(new)
             biblio.export_users()
             ok = False
@@ -59,6 +64,9 @@ while inscrire:
             connexion = True
             logUser = input("Veuillez entrer votre log-in")
             psdUser = input("Veuillez entrer votre mdp")
+            print("Un instant nous vérifions vos informations ...")
+            print("————————————————————————————————————")
+            time.sleep(1)
             compteur = 0
             while not verif_user(biblio.users_list, logUser, psdUser):
                 compteur += 1
@@ -72,6 +80,7 @@ while inscrire:
 
             if connexion:
                 print("Connexion réussie")
+                print("————————————————————————————————————")
 
 
                 infini = True
@@ -111,14 +120,22 @@ while inscrire:
                             if changement:
                                 new_mdp = input("Entrez votre nouveau mot de passe")
                                 changement_mdp(biblio.users_list, logUser, new_mdp)
-                                print("Changement mdp réussi")
+                                print("Un instant nous vérifions vos informations ...")
+                                print("————————————————————————————————————")
+                                time.sleep(1)
+                                print("Changement du mot de passe réussi !")
+                                print("————————————————————————————————————")
                                 ok = False
 
 
-                        else:
+                        elif entry == 5:
                             infini = False
                             print("Vous êtes déconnectez")
                             inscrire = True
+
+                        elif entry >= 6:
+                            print("Veuillez faire un choix présent dans la liste")
+                            ok = False
 
 
                 ###----fin connexion d'un utilisateur----###
