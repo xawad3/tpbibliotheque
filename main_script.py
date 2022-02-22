@@ -48,6 +48,7 @@ while inscrire:
             print("Votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
             biblio.users_list.append(new)
             biblio.export_users()
+            ok = False
         ###----fin enregistrement d'un utilisateur----##
 
 
@@ -97,19 +98,21 @@ while inscrire:
 
                         elif entry == 3:
                             changement = True
-                            mdp = input("Entrez votre mot mot de passe actuel")
+                            mdp = input("Entrez votre mot de passe actuel")
                             compteur  = 0
                             while not verif_user(biblio.users_list, logUser, mdp):
                                 compteur += 1
-                                mdp = input("Entrez votre mot mot de passe actuel")
+                                print("ok")
+                                mdp = input("Entrez encore votre mot de passe actuel")
                                 if compteur > 2:
                                     changement = False
                                     print("Au revoir !")
                                     break
-                                if changement:
-                                    new_mdp = input("Entrez votre nouveau mot de passe")
-                                    changement_mdp(biblio.users_list, logUser, new_mdp)
-                                    print("Changement mdp réussi")
+                            if changement:
+                                new_mdp = input("Entrez votre nouveau mot de passe")
+                                changement_mdp(biblio.users_list, logUser, new_mdp)
+                                print("Changement mdp réussi")
+                                ok = False
 
 
                         else:
