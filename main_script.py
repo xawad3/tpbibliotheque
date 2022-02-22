@@ -146,8 +146,7 @@ while inscrire:
 
 
 
-#print(user1)
-#print(biblio.users_list)
+
 
 
 
