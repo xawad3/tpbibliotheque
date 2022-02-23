@@ -9,7 +9,7 @@ import time
 
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter", "J'ai perdu mes identifiants"]
-choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Rendre un livre","Changer votre mot de passe", "Se déconnecter"]
+choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Rendre un livre", "Changer votre mot de passe", "Se déconnecter"]
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue", "Revenir au menu précédent"]
 
 biblio = Library("Pourdlard")
@@ -31,7 +31,6 @@ biblio.add_a_book(book6)
 biblio.add_a_book(book7)
 biblio.add_a_book(book8)
 biblio.add_a_book(book12)
-user1.Borrow(book1)
 print(user1)
 
 print("————————————————————————————————————")
@@ -164,7 +163,10 @@ while inscrire:
                             connected_user.Borrow(new_borrow)
                             biblio.object_by_ref(new_borrow).noDispo()
                             biblio.object_by_ref(new_borrow).dateBackto()
-                            print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
+                            print(f"Vous venez d'emprunter {biblio.object_by_ref(new_borrow)}et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : " )
+                            for i in connected_user.borrow:
+                                print(biblio.object_by_title(i))
+                            input()
                             ok = False
 
                         #Fonctionnalité Prolonger un emprunt

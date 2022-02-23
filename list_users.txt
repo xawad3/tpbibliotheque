@@ -1,3 +1,2 @@
-Potter ; Harry ; drago ; 0 ; 0 ; [Le livre Une Fois trois de l'auteur Axelle AUclair, réfèrence ua5388 est disponible à l'emprunt
-]
-soul ; rom ; romain ; 0 ; 0 ; []
+Potter ; Harry ; drago ; 0 ; 0 ; []
+P.Harry ; drago ; romain ; 0 ; 0 ; []

@@ -138,6 +138,11 @@ class Library:
             if ref == i.ref_book:
                 return i
 
+    def object_by_title(self, ref):
+        for i in self.books_list:
+            if ref == i.ref_book:
+                return i.title_book
+
 
 
 
