@@ -13,7 +13,7 @@ class Books:
         self.language_book = language_book
         self.type_book = type_book #roman, nouvelles etc
         self.category_book = category_book #fantastique, polar etc
-        self.ref_book = title_book[0] + author_book[0] + str(random.randint(0, 100000))
+        self.ref_book = (title_book[0] + author_book[0] + str(random.randint(0, 100000))).lower()
         self.dispo = True
         self.backto = None
 
@@ -32,7 +32,7 @@ class Books:
         return datetime.date.strftime(self.backto, "%A %d %B %Y")
 
     def extendBorrow(self, days):
-        self.backto = self.backto + datetime.timedelta(days=int(days))
+        self.backto = self.backto + datetime.timedelta(days=days)
         return self.backto
 
 
