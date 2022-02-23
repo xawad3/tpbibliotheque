@@ -10,7 +10,7 @@ import time
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
-choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre" "Par langue"]
+choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue"]
 biblio = Library("Pourdlard")
 
 # Ajout de livre dans la biblio pour la matière
