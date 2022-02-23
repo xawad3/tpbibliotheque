@@ -1,3 +1,4 @@
+# from dbm.ndbm import library
 from functions import *
 from Person_ import *
 from Library_ import *
@@ -11,6 +12,13 @@ choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre" "Par langue"]
 biblio = Library("Pourdlard")
+
+# Ajout de livre dans la biblio pour la matière
+biblio.add_a_book(book1)
+biblio.add_a_book(book2)
+biblio.add_a_book(book3)
+#
+
 user1 = Users("Potter", "Harry", "drago")
 biblio.users_list.append(user1)
 biblio.add_a_book(book1)
@@ -141,12 +149,23 @@ while inscrire:
 
 
 
-                        elif entry == 1:
-                            print("La fonctionnalité 'emprunter un livre'  n'est pas encore disponible ! Bientôt !")
+                                # Fonctionnalité Emprunter un livre
+                        elif entry1 == 1:
+                            print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
+                            new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
+                            connected_user.Borrow(new_borrow)
+                            biblio.object_by_ref(new_borrow).noDispo()
+                            biblio.object_by_ref(new_borrow).dateBackto()
+                            print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
+                            print(biblio.books_list)
 
-                        elif entry == 2:
-                            print("La fonctionnalité 'prolonger un emprunt'  n'est pas encore disponible ! Bientôt !")
-
+                        #Fonctionnalité Prolonger un emprunt
+                        elif entry1 == 2:
+                            book_borrow = str(input(f"Voici les livres que vous avez en votre possession :\n {connected_user.borrow}\n Veuillez saisir la référence dont vous voulez prolonger le prêt ?"))
+                            addDays = int(input(f"De combien de jour voulez-vous prolonger votre prêt sur ce livre ?\n"))
+                            biblio.object_by_ref(book_borrow).extendBorrow(addDays)
+                            print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
+                        
                         elif entry == 3:
                             changement = True
                             mdp = input("Entrez votre mot de passe actuel")

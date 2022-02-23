@@ -133,6 +133,11 @@ class Library:
                     self.users_list[-1].borrow.append(i)
                 self.users_list[-1].counter = maLigne[4]
 
+    def object_by_ref(self, ref):
+        for i in self.books_list:
+            if ref == i.ref_book:
+                return i
+
 
 
 
