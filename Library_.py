@@ -83,7 +83,7 @@ class Library:
         else:
             for i in self.books_list:
                 if i.author_book == author[0]:
-                    print(i.title_book, i.ref_book)
+                    print(i.title_book+ " : " + i.ref_book)
 
     def books_by_title(self, x):
         title = []

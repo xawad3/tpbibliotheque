@@ -44,8 +44,22 @@ while inscrire:
     while ok:
         ###----début enregistrement d'un utilisateur----###
         if entry == 0:
-            biblio.books_by_author(input("Ecrivez le nom de l'auteur"))
-            print("La fonctionnalité 'recherche un livre' n'est pas encore disponible ! Bientôt !")
+            Menu(choice2)
+            choix = int(input("Comment souhaitez vous rechercher votre livre ?"))
+            if choix == 0:
+                biblio.books_by_author(input("Ecrivez le nom de l'auteur"))
+
+            elif choix == 1:
+                biblio.books_by_type(input("Ecrivez le nom de du genre"))
+
+            elif choix == 2:
+                biblio.books_by_category(input("Ecrivez le nom de la catégorie"))
+
+            elif choix == 3:
+                biblio.books_by_title(input("Ecrivez le titre du livre"))
+
+            else:
+                biblio.books_by_language(input("Ecrivez la langue du livre"))
         elif entry == 1:
             name = input("Quel est votre nom ?\n")
             first_name = input("Quel est votre prénom ?\n")
