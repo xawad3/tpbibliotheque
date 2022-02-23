@@ -31,7 +31,6 @@ biblio.add_a_book(book6)
 biblio.add_a_book(book7)
 biblio.add_a_book(book8)
 biblio.add_a_book(book12)
-user1.Borrow(book1)
 print(user1)
 
 print("————————————————————————————————————")
