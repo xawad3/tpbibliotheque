@@ -32,6 +32,9 @@ biblio.add_a_book(book9)
 biblio.add_a_book(book10)
 biblio.add_a_book(book12)
 
+print(user1)
+
+
 print("————————————————————————————————————")
 print("Bienvenue dans la bibliothèque", biblio.name_library)
 print("————————————————————————————————————")
@@ -84,7 +87,7 @@ while inscrire:
             print("Félicitations votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
             print("————————————————————————————————————")
             biblio.users_list.append(new)
-            biblio.export_users()
+
             ok = False
         ###----fin enregistrement d'un utilisateur----##
 
@@ -187,19 +190,21 @@ while inscrire:
                                             connected_user.rank = 4
                                             print("Merci pour votre abonnement votre rang est désormais de 4 !")
                                             abo = False
-
-                                if connected_user.rank != 0:
-                                    emprunt = len(connected_user.borrow)
-                                    if emprunt == connected_user.rank:
-                                        print("Vous  ne pouvez pas emprunter d'autre livre")
-                                    else:
-                                        print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
-                                        new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
-                                        connected_user.Borrow(new_borrow)
-                                        biblio.object_by_ref(new_borrow).noDispo()
-                                        biblio.object_by_ref(new_borrow).dateBackto()
-                                        print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
-                                        print(biblio.books_list)
+                                borrows = True
+                                while borrows:
+                                    if connected_user.rank != 0:
+                                        emprunt = len(connected_user.borrow)
+                                        if emprunt == connected_user.rank:
+                                            print("Vous  ne pouvez pas emprunter d'autre livre")
+                                        else:
+                                            print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
+                                            new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
+                                            connected_user.Borrow(new_borrow)
+                                            biblio.object_by_ref(new_borrow).noDispo()
+                                            biblio.object_by_ref(new_borrow).dateBackto()
+                                            print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
+                                            print(biblio.books_list)
+                                            borrows = False
 
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
@@ -215,7 +220,7 @@ while inscrire:
                             connected_user.BackTo(book_borrow)
                             biblio.object_by_ref(book_borrow).Dispo()
                             biblio.object_by_ref(book_borrow).returnBookDate()
-                            print(f"Vous venez de rendre le livre réf.{book_borrow}")
+                            print(f"Vous venez de rendre le livre réf.{book_borrow}, il vous reste {connected_user.borrow} en votre possession.")
                             ok = False
 
                         elif entry == 4:
@@ -246,6 +251,7 @@ while inscrire:
 
                             print("Vous êtes déconnectez")
                             biblio.export_books()
+                            biblio.export_users()
                             inscrire = True
                             break
                         elif entry >= 6:
