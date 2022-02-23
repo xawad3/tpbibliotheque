@@ -157,7 +157,7 @@ while inscrire:
 
 
 
-                                # Fonctionnalité Emprunter un livre
+                        # Fonctionnalité Emprunter un livre
                         elif entry == 1:
                             print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
                             new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
@@ -165,7 +165,6 @@ while inscrire:
                             biblio.object_by_ref(new_borrow).noDispo()
                             biblio.object_by_ref(new_borrow).dateBackto()
                             print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
-                            print(biblio.books_list)
                             ok = False
 
                         #Fonctionnalité Prolonger un emprunt
