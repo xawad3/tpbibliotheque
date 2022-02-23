@@ -11,6 +11,7 @@ import time
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter", "J'ai perdu mes identifiants"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue", "Revenir au menu précédent"]
+sub = ["Je ne veux pas m'abonner","10 Noises/mois (1 livre emprunté par mois)", "5 Mornilles/mois (jusqu'à 2 livres à la fois)", "10 Mornilles/mois (jusqu'à 3 livres à la fois)", "10 Gallions/mois (jusqu'à 4 livres à la fois)"]
 biblio = Library("Pourdlard")
 
 # Ajout de livre dans la biblio pour la matière
@@ -158,13 +159,49 @@ while inscrire:
 
                                 # Fonctionnalité Emprunter un livre
                         elif entry == 1:
-                            print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
-                            new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
-                            connected_user.Borrow(new_borrow)
-                            biblio.object_by_ref(new_borrow).noDispo()
-                            biblio.object_by_ref(new_borrow).dateBackto()
-                            print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
-                            print(biblio.books_list)
+                            abo = True
+                            for connected_user in biblio.users_list:
+
+                                while abo:
+                                    if connected_user.rank == 0:
+                                        print("Vous devez être abonné(e) pour emprunter un livre !")
+                                        Menu(sub)
+                                        entry2 = int(input("Choisissez le montant de votre abonnement"))
+
+                                        if entry2 == 0:
+                                            print("DOMMAGE")
+                                            abo = False
+
+                                            ok = False
+                                        elif entry2 == 1:
+                                            connected_user.rank = 1
+                                            print("Merci pour votre abonnement votre rang est désormais de 1 !")
+                                            abo = False
+                                        elif entry2 == 2:
+                                            connected_user.rank = 2
+                                            print("Merci pour votre abonnement votre rang est désormais de 2 !")
+                                            abo = False
+                                        elif entry2 == 3:
+                                            connected_user.rank = 3
+                                            print("Merci pour votre abonnement votre rang est désormais de 3 !")
+                                            abo = False
+                                        elif entry2 == 4:
+                                            connected_user.rank = 4
+                                            print("Merci pour votre abonnement votre rang est désormais de 4 !")
+                                            abo = False
+
+                                if connected_user.rank != 0:
+                                    emprunt = len(connected_user.borrow)
+                                    if emprunt == connected_user.rank:
+                                        print("Vous  ne pouvez pas emprunter d'autre livre")
+                                    else:
+                                        print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
+                                        new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
+                                        connected_user.Borrow(new_borrow)
+                                        biblio.object_by_ref(new_borrow).noDispo()
+                                        biblio.object_by_ref(new_borrow).dateBackto()
+                                        print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
+                                        print(biblio.books_list)
 
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
