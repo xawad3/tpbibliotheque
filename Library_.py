@@ -117,8 +117,8 @@ class Library:
     def export_users(self):
         with open('list_users.txt', 'w', encoding="utf-8") as f:
             for item in self.users_list:
-                f.write(str(item.name_user) + " ; " + str(item.first_name_user) + " ; " + str(
-                    item.pwd) + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
+                f.write(item.name_user + " ; " + item.first_name_user + " ; " +
+                    item.pwd + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
                     item.borrow) + "\n")
 
 
