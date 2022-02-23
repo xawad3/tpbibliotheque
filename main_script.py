@@ -16,7 +16,8 @@ biblio = Library("Pourdlard")
 biblio.import_books()
 biblio.import_user()
 # Ajout de livre dans la biblio pour la matière
-
+bidule = Books("Bidule", "Truc", "fr", "roman", "fantastique")
+print(bidule)
 
 # user1 = Users("Potter", "Harry", "drago")
 # biblio.users_list.append(user1)
@@ -31,8 +32,8 @@ biblio.import_user()
 # biblio.add_a_book(book9)
 # biblio.add_a_book(book10)
 # biblio.add_a_book(book12)
-
-#print(user1)
+#
+# print(user1)
 
 
 print("————————————————————————————————————")
