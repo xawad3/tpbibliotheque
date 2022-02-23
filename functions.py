@@ -18,7 +18,7 @@ def longeurmdp(mdp): #on rentre en paramètre un mdp
 
 def verif_user(liste_u, log, pwd): #on rentre en paramètre la liste des users, l'id et le mdp
     for i in liste_u:
-        if log == i.id:
+        if log.lower() == i.id.lower():
             if pwd == i.pwd:
                 return True
     return False
