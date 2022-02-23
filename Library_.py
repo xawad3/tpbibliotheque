@@ -35,7 +35,7 @@ class Library:
 # Importation des livres du .txt => books_list
 # ============================================
     def import_books(self):
-        with open("list_books.txt", 'r') as f:
+        with open("list_books.txt", 'r', encoding="utf-8") as f:
             for item in f:
                 maLigne = item.split(" ; ")
                 self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
@@ -46,6 +46,12 @@ class Library:
                 if maLigne[4] not in self.section_list:
                     self.section_list.append(maLigne[4])
                 self.books_list[-1].ref = maLigne[5]
+
+                if maLigne[6] == "True":
+                    maLigne[6] = True
+
+                elif maLigne[6] == "False":
+                    maLigne[6] = False
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
 # ======================================================
@@ -123,7 +129,7 @@ class Library:
 
 
     def import_user(self):
-        with open("list_users.txt", 'r') as f:
+        with open("list_users.txt", 'r', encoding="utf-8") as f:
             for item in f.readlines():
                 maLigne = item.split(" ; ")
 
@@ -136,7 +142,7 @@ class Library:
                 if len(listeEmpruntTempo) == 2:
                     self.users_list[-1].borrow = []
                 else:
-                    for i in (listeEmpruntTempo.split(" ,")):
+                    for i in (listeEmpruntTempo.split(",")):
                         self.users_list[-1].borrow.append(i)
 
                 #self.users_list[-1].counter = maLigne[5]

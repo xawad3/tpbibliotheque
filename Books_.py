@@ -42,10 +42,10 @@ class Books:
 
 
     def __repr__(self):
-        if self.dispo == True :
-            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} est disponible à l'emprunt\n"
-        else :
-            affiche = f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} n'est pas disponible à l'emprunt\n"
+        # if self.dispo == True :
+        affiche = (f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} est disponible à l'emprunt\n")
+        # else :
+        # affiche = (f"Le livre {self.title_book} de l'auteur {self.author_book}, réfèrence {self.ref_book} n'est pas disponible à l'emprunt\n")
         return affiche
 
 
