@@ -19,14 +19,13 @@ class Users(Person):
         elif self.counter_rank > 100:
             self.rank = "10, Rang Max"
         else:
-            self.rank = len(self.counter_rank)[0]
+            self.rank = int(str(self.counter_rank)[0])
 
     def Borrow(self, ref):
         self.borrow.append(ref)
 
     def BackTo(self, book):
-        self.borrow.remove(book.getRef())
-        self.counter_rank += 1
+        self.borrow.remove(book)
 
     def __repr__(self):
         affiche = f"{self.name_user} {self.first_name_user} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow} son mdp {self.pwd}"

@@ -2,7 +2,7 @@
 
 def Menu(a): #on rentre en paramètre une liste de choix
     for i in range(len(a)):
-        print(f"{i} : {a[i]}") #on affiche les choix présents dans la liste et leur index respectif.
+        print(f"{i}: {a[i]}") #on affiche les choix présents dans la liste et leur index respectif.
 
 
 ##---fontion pour vérifier la laongueur du mdp---##
@@ -18,7 +18,7 @@ def longeurmdp(mdp): #on rentre en paramètre un mdp
 
 def verif_user(liste_u, log, pwd): #on rentre en paramètre la liste des users, l'id et le mdp
     for i in liste_u:
-        if log == i.id:
+        if log.lower() == i.id.lower():
             if pwd == i.pwd:
                 return True
     return False
@@ -30,4 +30,7 @@ def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des use
     for i in liste_u:
         if log == i.id: #on vérifie que l'id de l'user est le bon et on change son mdp
             i.pwd = pwd
+
+
+
 

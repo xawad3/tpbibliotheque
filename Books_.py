@@ -4,7 +4,6 @@ import locale
 
 locale.setlocale(locale.LC_TIME, '')
 
-
 class Books:
 
     def __init__(self, title_book, author_book, language_book, type_book, category_book):
@@ -25,6 +24,12 @@ class Books:
 
     def noDispo(self):
         self.dispo = False
+
+    def Dispo(self):
+        self.dispo = True
+
+    def returnBookDate(self):
+        self.backto = None
 
 
     def dateBackto(self):
@@ -55,5 +60,6 @@ book7 = Books("Numéro 2", "David Foenkinos", "Français", "Drame", "Roman")
 book8 = Books("La décision", "Karine Tuil", "Français", "Témoignage", "Roman")
 book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
 book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
+book12 = Books("Celui qui veille la nuit", "Louise Rimbaud", "Français", "Roman Historique", "Roman")
 print(book1)
 
