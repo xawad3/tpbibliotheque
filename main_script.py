@@ -181,7 +181,7 @@ while inscrire:
                             connected_user.BackTo(book_borrow)
                             biblio.object_by_ref(book_borrow).Dispo()
                             biblio.object_by_ref(book_borrow).returnBookDate()
-                            print(f"Vous venez de rendre le livre réf.{book_borrow}")
+                            print(f"Vous venez de rendre le livre réf.{book_borrow}, il vous reste {connected_user.borrow} en votre possession.")
                             ok = False
 
                         elif entry == 4:
