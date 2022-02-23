@@ -25,8 +25,7 @@ class Users(Person):
         self.borrow.append(ref)
 
     def BackTo(self, book):
-        self.borrow.remove(book.getRef())
-        self.counter_rank += 1
+        self.borrow.remove(book)
 
     def __repr__(self):
         affiche = f"{self.name_user} {self.first_name_user} son identifiant est {self.id} son rang est de {self.rank} il a emprunté {self.borrow} son mdp {self.pwd}"

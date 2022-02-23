@@ -25,6 +25,12 @@ class Books:
     def noDispo(self):
         self.dispo = False
 
+    def Dispo(self):
+        self.dispo = True
+
+    def returnBookDate(self):
+        self.backto = None
+
 
     def dateBackto(self):
         self.backto = datetime.date.today() + datetime.timedelta(days=15)
