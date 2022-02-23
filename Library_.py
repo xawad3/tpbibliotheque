@@ -40,7 +40,7 @@ class Library:
                 maLigne = item.split(" ; ")
                 self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
                 self.books_list[-1].ref_book = maLigne[5]
-                self.books_list[-1].dispo = maLigne[6]
+                #self.books_list[-1].dispo = maLigne[6]
                 if maLigne[1] not in self.author_list:
                     self.author_list.append(maLigne[1])
                 if maLigne[4] not in self.section_list:
@@ -48,10 +48,10 @@ class Library:
                 self.books_list[-1].ref = maLigne[5]
 
                 if maLigne[6] == "True":
-                    maLigne[6] = True
+                    self.books_list[-1].dispo = True
 
                 elif maLigne[6] == "False":
-                    maLigne[6] = False
+                    self.books_list[-1].dispo = False
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
 # ======================================================
