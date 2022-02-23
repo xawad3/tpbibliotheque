@@ -9,7 +9,7 @@ import time
 
 
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter"]
-choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Changer votre mot de passe", "Se déconnecter"]
+choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Rendre un livre", "Changer votre mot de passe", "Se déconnecter"]
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre" "Par langue"]
 biblio = Library("Pourdlard")
 
@@ -161,6 +161,7 @@ while inscrire:
                             biblio.object_by_ref(new_borrow).dateBackto()
                             print(f"Vous venez d'emprunter le livre dont la référence est {new_borrow} et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : {connected_user.borrow}" )
                             print(biblio.books_list)
+                            ok = False
 
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
@@ -168,8 +169,18 @@ while inscrire:
                             addDays = int(input(f"De combien de jour voulez-vous prolonger votre prêt sur ce livre ?\n"))
                             biblio.object_by_ref(book_borrow).extendBorrow(addDays)
                             print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
-                        
+                            ok = False
+
+                        # Fonctionnalité rendre un livre
                         elif entry == 3:
+                            book_borrow = str(input(f"Voici les livres que vous avez en votre possession :\n {connected_user.borrow}\n Veuillez saisir la référence que vous voulez rendre ?"))
+                            connected_user.BackTo(book_borrow)
+                            biblio.object_by_ref(book_borrow).Dispo()
+                            biblio.object_by_ref(book_borrow).returnBookDate()
+                            print(f"Vous venez de rendre le livre réf.{book_borrow}")
+                            ok = False
+
+                        elif entry == 4:
                             changement = True
                             mdp = input("Entrez votre mot de passe actuel")
                             compteur  = 0
