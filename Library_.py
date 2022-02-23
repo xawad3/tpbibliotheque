@@ -28,7 +28,7 @@ class Library:
 # Exportation des livres contenus dans books_list => list_books.txt
 # =================================================================
     def export_books(self):
-        with open('list_books.txt', 'w') as f:
+        with open('list_books.txt', 'w', encoding="utf-8") as f:
             for item in self.books_list:
                 f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ "\n")
 
@@ -115,23 +115,33 @@ class Library:
         Menu(language)
 
     def export_users(self):
-        with open('list_users.txt', 'w') as f:
+        with open('list_users.txt', 'w', encoding="utf-8") as f:
             for item in self.users_list:
                 f.write(str(item.name_user) + " ; " + str(item.first_name_user) + " ; " + str(
-                    item.pwd) + " ; " + str(item.rank) + " ; " + str(item.counter_rank) + " ; " + str(
+                    item.pwd) + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
                     item.borrow) + "\n")
 
 
     def import_user(self):
         with open("list_users.txt", 'r') as f:
-            for item in f:
+            for item in f.readlines():
                 maLigne = item.split(" ; ")
-                print(maLigne)
-                self.users_list.append(Users(maLigne[0],maLigne[1],maLigne[2]))
-                self.users_list[-1].rank = maLigne[3]
-                for i in (maLigne[-1])[1:-1].split(","):
-                    self.users_list[-1].borrow.append(i)
-                self.users_list[-1].counter = maLigne[4]
+
+                self.users_list.append(Users(maLigne[0], maLigne[1], maLigne[2]))
+                self.users_list[-1].rank = int(maLigne[3])
+                self.users_list[-1].id = maLigne[4]
+                #print(self.users_list[-1])
+                listeEmpruntTempo = maLigne[-1][1:-2]
+
+                if len(listeEmpruntTempo) == 2:
+                    self.users_list[-1].borrow = []
+                else:
+                    for i in (listeEmpruntTempo.split(" ,")):
+                        self.users_list[-1].borrow.append(i)
+
+                #self.users_list[-1].counter = maLigne[5]
+
+
 
     def object_by_ref(self, ref):
         for i in self.books_list:

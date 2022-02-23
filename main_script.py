@@ -13,12 +13,10 @@ choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", 
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue", "Revenir au menu précédent"]
 sub = ["Je ne veux pas m'abonner","10 Noises/mois (1 livre emprunté par mois)", "5 Mornilles/mois (jusqu'à 2 livres à la fois)", "10 Mornilles/mois (jusqu'à 3 livres à la fois)", "10 Gallions/mois (jusqu'à 4 livres à la fois)"]
 biblio = Library("Pourdlard")
-
+biblio.import_books()
+biblio.import_user()
 # Ajout de livre dans la biblio pour la matière
-biblio.add_a_book(book1)
-biblio.add_a_book(book2)
-biblio.add_a_book(book3)
-#
+
 
 user1 = Users("Potter", "Harry", "drago")
 biblio.users_list.append(user1)
@@ -30,9 +28,9 @@ biblio.add_a_book(book5)
 biblio.add_a_book(book6)
 biblio.add_a_book(book7)
 biblio.add_a_book(book8)
+biblio.add_a_book(book9)
+biblio.add_a_book(book10)
 biblio.add_a_book(book12)
-user1.Borrow(book1)
-print(user1)
 
 print("————————————————————————————————————")
 print("Bienvenue dans la bibliothèque", biblio.name_library)
@@ -233,11 +231,13 @@ while inscrire:
                                 ok = False
 
 
-                        elif entry == 5:
+                        elif entry == 4:
                             infini = False
-                            print("Vous êtes déconnectez")
-                            inscrire = True
 
+                            print("Vous êtes déconnectez")
+                            biblio.export_books()
+                            inscrire = True
+                            break
                         elif entry >= 6:
                             print("Veuillez faire un choix présent dans la liste")
                             ok = False
