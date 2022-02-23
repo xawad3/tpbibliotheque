@@ -71,7 +71,7 @@ class Library:
     def books_by_author(self, x):
         author = []
         for i in self.books_list:
-            if x in i.author_book:
+            if x.lower() in i.author_book.lower():
                 if not i.author_book in author:
                     author.append(i.author_book)
         if len(author) > 1:
@@ -83,12 +83,12 @@ class Library:
         else:
             for i in self.books_list:
                 if i.author_book == author[0]:
-                    print(i.title_book+ " : " + i.ref_book)
+                    print(i.title_book + " : " + i.ref_book)
 
     def books_by_title(self, x):
         title = []
         for i in self.books_list:
-            if x in i.title_book:
+            if x.lower() in i.title_book.lower():
                 title.append(i.title_book + " : " + i.ref_book)
         Menu(title)
 
@@ -96,21 +96,21 @@ class Library:
     def books_by_type(self, x):
         type = []
         for i in self.books_list:
-            if x in i.type_book:
+            if x.lower() in i.type_book.lower():
                 type.append(i.title_book + " : " + i.ref_book)
         Menu(type)
 
     def books_by_category(self, x):
         category = []
         for i in self.books_list:
-            if x in i.category_book:
+            if x.lower() in i.category_book.lower():
                 category.append(i.title_book + " : " + i.ref_book)
         Menu(category)
 
     def books_by_language(self, x):
         language = []
         for i in self.books_list:
-            if x in i.language_book:
+            if x.lower() in i.language_book.lower():
                 language.append(i.title_book + " : " + i.ref_book)
         Menu(language)
 
