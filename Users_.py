@@ -5,8 +5,8 @@ from Books_ import *
 
 class Users(Person):
 
-    def __init__(self, name_user, first_name_user, pwd):
-        super().__init__(name_user, first_name_user, pwd)
+    def __init__(self, name_user, first_name_user, pwd, mail):
+        super().__init__(name_user, first_name_user, pwd, mail)
         # counter est égal au nombre de fois où l'user a rendu un livre, 
         # le rank se base sur ce nombre pour définir une valeur (10 retours = +1 rank)
         self.rank = 0

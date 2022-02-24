@@ -39,5 +39,13 @@ def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des use
             i.pwd = pwd
 
 
+def perte_id(liste_u, name, firstname, mail):
+    for i in liste_u:
+        if name == i.name_user:
+            if firstname == i.first_name_user:
+                if mail == i.mail:
+                    return True
+        else:
+            return False
 
 

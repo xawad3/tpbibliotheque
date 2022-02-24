@@ -140,7 +140,7 @@ class Library:
         with open('list_users.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in self.users_list:
                 f.write(item.name_user + " ; " + item.first_name_user + " ; " +
-                    item.pwd + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
+                    item.pwd + " ; " + str(item.mail) + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
                     item.borrow) + "\n")
 
 
@@ -149,9 +149,9 @@ class Library:
             for item in f.readlines():
                 maLigne = item.split(" ; ")
 
-                self.users_list.append(Users(maLigne[0], maLigne[1], maLigne[2]))
-                self.users_list[-1].rank = int(maLigne[3])
-                self.users_list[-1].id = maLigne[4]
+                self.users_list.append(Users(maLigne[0], maLigne[1], maLigne[2], maLigne[3]))
+                self.users_list[-1].rank = int(maLigne[4])
+                self.users_list[-1].id = maLigne[5]
                 #print(self.users_list[-1])
                 #-- /!\ ici on gère l'import correct de la liste d'emprunt ! /!\ --##
                 listeEmpruntTempo = maLigne[-1][1:-2] #on créait une liste temporaire qui récupère seulement ce que l'on veut transformer en liste, de l'index
