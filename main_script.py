@@ -68,8 +68,11 @@ while inscrire:
             elif choix == 3:
                 biblio.books_by_title(input("Ecrivez le titre du livre\n"))
 
-            else:
+            elif choix ==4:
                 biblio.books_by_language(input("Ecrivez la langue du livre\n"))
+            else:
+                ok = False
+
         elif entry == 1:
             name = input("Quel est votre nom ?\n")
             first_name = input("Quel est votre prénom ?\n")

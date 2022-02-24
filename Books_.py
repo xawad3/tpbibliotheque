@@ -36,7 +36,7 @@ class Books:
         if self.dispo == True:
             dispoOn = '\033[32m'
             dispoOff = '\033[0m'
-            return (dispoOn + "disponible à l'emprunt" + dispoOff)
+            return (dispoOn + "est disponible à l'emprunt" + dispoOff)
         else:
             dispoOn = '\033[91m'
             dispoOff = '\033[0m'
