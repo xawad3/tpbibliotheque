@@ -28,14 +28,14 @@ class Library:
 # Exportation des livres contenus dans books_list => list_books.txt
 # =================================================================
     def export_books(self):
-        with open('list_books.txt', 'w', encoding="utf-8") as f:
+        with open('list_books.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in self.books_list:
                 f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ " ; " + str(item.backto) + "\n")
 
 # Importation des livres du .txt => books_list
 # ============================================
     def import_books(self):
-        with open("list_books.txt", 'r', encoding="utf-8") as f:
+        with open("list_books.txt", 'r', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in f:
                 maLigne = item.split(" ; ")
                 self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
@@ -47,14 +47,16 @@ class Library:
                     self.section_list.append(maLigne[4])
                 self.books_list[-1].ref = maLigne[5]
 
-                if maLigne[6] == "True":
+                #--ici on gère la disponibilité des livres dans l'import--#
+                if maLigne[6] == "True": #si l'index 6 de la ligne = True, on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
                     self.books_list[-1].dispo = True
                     self.books_list[-1].backto = None
 
-                elif maLigne[6] == "False":
+                elif maLigne[6] == "False": #si l'index 6 de la ligne = False, on passe la dispo du livre à False en remettant en place le booléens
                     self.books_list[-1].dispo = False
-                    date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")
-                    self.books_list[-1].backto = datetime.datetime.date(date_hour)
+                    #ici, vue le livre n'est pas disponible, on transforme le string date du fichier txt en date
+                    date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
+                    self.books_list[-1].backto = datetime.datetime.date(date_hour) #on fait en sorte que le backto devienne une date au format aa-mm-dd
 
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
@@ -125,7 +127,7 @@ class Library:
         Menu(language)
 
     def export_users(self):
-        with open('list_users.txt', 'w', encoding="utf-8") as f:
+        with open('list_users.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in self.users_list:
                 f.write(item.name_user + " ; " + item.first_name_user + " ; " +
                     item.pwd + " ; " + str(item.rank) + " ; " + str(item.id) + " ; " + str(
@@ -133,7 +135,7 @@ class Library:
 
 
     def import_user(self):
-        with open("list_users.txt", 'r', encoding="utf-8") as f:
+        with open("list_users.txt", 'r', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in f.readlines():
                 maLigne = item.split(" ; ")
 
@@ -141,13 +143,15 @@ class Library:
                 self.users_list[-1].rank = int(maLigne[3])
                 self.users_list[-1].id = maLigne[4]
                 #print(self.users_list[-1])
-                listeEmpruntTempo = maLigne[-1][1:-2]
+                #-- /!\ ici on gère l'import correct de la liste d'emprunt ! /!\ --##
+                listeEmpruntTempo = maLigne[-1][1:-2] #on créait une liste temporaire qui récupère seulement ce que l'on veut transformer en liste, de l'index
+                # 1 à l'index - 2 exclu, soit à l'intérieur des [] seulement !
 
-                if len(listeEmpruntTempo) == 0:
-                    self.users_list[-1].borrow = []
+                if len(listeEmpruntTempo) == 0: #si ce qu'il y a dans cette liste temporaire est vide, alors,
+                    self.users_list[-1].borrow = [] #user.borrow sera égal à une liste vide []
                 else:
-                    for i in (listeEmpruntTempo.split(", ")):
-                        self.users_list[-1].borrow.append(i[1:-2])
+                    for i in (listeEmpruntTempo.split(", ")): #si la liste n'est pas vide, alors on split entre les virgules, pour en faire une liste
+                        self.users_list[-1].borrow.append(i[1:-1]) #user.borrow récupérera seulement les références des livres, sans les ' '
 
                 #self.users_list[-1].counter = maLigne[5]
 

@@ -100,7 +100,7 @@ while inscrire:
             psdUser = input("Veuillez entrer votre mdp\n")
             print("Un instant nous vérifions vos informations ...")
             print("————————————————————————————————————")
-            time.sleep(1)
+            time.sleep(0.5)
             compteur = 0
             while not verif_user(biblio.users_list, logUser, psdUser):
                 compteur += 1
@@ -114,7 +114,7 @@ while inscrire:
 
             if connexion:
                 for users in biblio.users_list:
-                    if logUser == users.id:
+                    if logUser.lower() == users.id.lower():
                         connected_user = users
                 print("Connexion réussie")
                 print("————————————————————————————————————")
@@ -248,7 +248,7 @@ while inscrire:
                                 changement_mdp(biblio.users_list, logUser, new_mdp)
                                 print("Un instant nous vérifions vos informations ...")
                                 print("————————————————————————————————————")
-                                time.sleep(1)
+                                time.sleep(0.5)
                                 print("Changement du mot de passe réussi !")
                                 print("————————————————————————————————————")
                                 ok = False
@@ -268,10 +268,15 @@ while inscrire:
 
 
                 ###----fin connexion d'un utilisateur----###
+        elif entry == 4:
+            inscrire = False
+            ok = False
 
-        elif entry >= 3:
+        elif entry > 4:
             print("Veuillez faire un choix présent dans la liste")
             ok = False
+
+
 
 
 

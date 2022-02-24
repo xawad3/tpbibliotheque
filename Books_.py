@@ -61,5 +61,4 @@ book8 = Books("La décision", "Karine Tuil", "Français", "Témoignage", "Roman"
 book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
 book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
 book12 = Books("Celui qui veille la nuit", "Louise Rimbaud", "Français", "Roman Historique", "Roman")
-print(book1)
 

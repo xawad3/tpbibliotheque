@@ -1,11 +1,11 @@
 Une Fois trois ; Axelle AUclair ; Français ; Roman D'amour ; Roman ; ua38344 ; True ; None
 Maudite ; C. Sizel ; Français ; Fantasy ; Roman ; mc92767 ; True ; None
-Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa6679 ; True ; None
+Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa6679 ; False ; 2022-04-25
 Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc25821 ; True ; None
 Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne52568 ; True ; None
 Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa42438 ; True ; None
 Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd21777 ; True ; None
 La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk31590 ; True ; None
-Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am57751 ; False ; 2022-03-11
+Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am57751 ; True ; None
 Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl55865 ; True ; None
 Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl27463 ; True ; None
