@@ -38,14 +38,14 @@ class Books:
 
     def extendBorrow(self, days):
         self.backto = self.backto + datetime.timedelta(days=days)
-        return self.backto
+        return datetime.date.strftime(self.backto, "%A %d %B %Y")
 
 
     def __repr__(self):
         if self.dispo == True :
             affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} qui est disponible à l'emprunt\n'''
         else :
-            affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} qui n'est plus disponible à l'emprunt\n'''
+            affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} qui n'est plus disponible à l'emprunt qui devrait être de retour {datetime.date.strftime(self.backto, "%A %d %B %Y")}\n'''
         return affiche
 
 

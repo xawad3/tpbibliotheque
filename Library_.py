@@ -30,7 +30,7 @@ class Library:
     def export_books(self):
         with open('list_books.txt', 'w', encoding="utf-8") as f:
             for item in self.books_list:
-                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ "\n")
+                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ " ; " + str(item.backto) + "\n")
 
 # Importation des livres du .txt => books_list
 # ============================================
@@ -47,11 +47,15 @@ class Library:
                     self.section_list.append(maLigne[4])
                 self.books_list[-1].ref = maLigne[5]
 
-                if maLigne[6][:-1] == "True":
+                if maLigne[6] == "True":
                     self.books_list[-1].dispo = True
+                    self.books_list[-1].backto = None
 
-                elif maLigne[6][:-1] == "False":
+                elif maLigne[6] == "False":
                     self.books_list[-1].dispo = False
+                    date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")
+                    self.books_list[-1].backto = datetime.datetime.date(date_hour)
+
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
 # ======================================================
