@@ -4,8 +4,8 @@ Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Français
 Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc25821 ; True
 Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne52568 ; True
 Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa42438 ; True
-Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd21777 ; True
+Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd21777 ; False
 La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk31590 ; True
 Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am57751 ; True
-Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl55865 ; True
-Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl27463 ; True
+Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl55865 ; False
+Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl27463 ; False
