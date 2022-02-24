@@ -47,10 +47,10 @@ class Library:
                     self.section_list.append(maLigne[4])
                 self.books_list[-1].ref = maLigne[5]
 
-                if maLigne[6] == "True":
+                if maLigne[6][:-1] == "True":
                     self.books_list[-1].dispo = True
 
-                elif maLigne[6] == "False":
+                elif maLigne[6][:-1] == "False":
                     self.books_list[-1].dispo = False
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
@@ -139,11 +139,11 @@ class Library:
                 #print(self.users_list[-1])
                 listeEmpruntTempo = maLigne[-1][1:-2]
 
-                if len(listeEmpruntTempo) == 2:
+                if len(listeEmpruntTempo) == 0:
                     self.users_list[-1].borrow = []
                 else:
-                    for i in (listeEmpruntTempo.split(",")):
-                        self.users_list[-1].borrow.append(i)
+                    for i in (listeEmpruntTempo.split(", ")):
+                        self.users_list[-1].borrow.append(i[1:-2])
 
                 #self.users_list[-1].counter = maLigne[5]
 
