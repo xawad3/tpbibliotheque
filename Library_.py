@@ -48,11 +48,11 @@ class Library:
                 self.books_list[-1].ref = maLigne[5]
 
                 #--ici on gère la disponibilité des livres dans l'import--#
-                if maLigne[6] == "True": #si l'index 6 de la ligne = True, on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
+                if maLigne[6] == "True": #si l'index 6 de la ligne = "True", on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
                     self.books_list[-1].dispo = True
                     self.books_list[-1].backto = None
 
-                elif maLigne[6] == "False": #si l'index 6 de la ligne = False, on passe la dispo du livre à False en remettant en place le booléens
+                elif maLigne[6] == "False": #si l'index 6 de la ligne = "False", on passe la dispo du livre à False en remettant en place le booléens
                     self.books_list[-1].dispo = False
                     #ici, vue le livre n'est pas disponible, on transforme le string date du fichier txt en date
                     date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
@@ -86,7 +86,9 @@ class Library:
             if x.lower() in i.author_book.lower():
                 if not i.author_book in author:
                     author.append(i.author_book)
-        if len(author) > 1:
+        if not author:
+            print("pas d'auteur")
+        elif len(author) > 1:
             Menu(author)
             choix = input("Choisissez votre auteur(le numéro)")
             auteur_choix = author[int(choix)]
@@ -102,7 +104,12 @@ class Library:
         for i in self.books_list:
             if x.lower() in i.title_book.lower():
                 title.append(i.title_book + " : " + i.ref_book)
-        Menu(title)
+
+        if not title:
+            print("Pas ce titrere")
+
+        else:
+            Menu(title)
 
 
     def books_by_type(self, x):
@@ -110,7 +117,10 @@ class Library:
         for i in self.books_list:
             if x.lower() in i.type_book.lower():
                 type.append(i.title_book + " : " + i.ref_book)
-        Menu(type)
+        if not type:
+            print("Nous ne trouvons pas")
+        else:
+            Menu(type)
 
     def books_by_category(self, x):
         category = []
@@ -151,7 +161,7 @@ class Library:
                     self.users_list[-1].borrow = [] #user.borrow sera égal à une liste vide []
                 else:
                     for i in (listeEmpruntTempo.split(", ")): #si la liste n'est pas vide, alors on split entre les virgules, pour en faire une liste
-                        self.users_list[-1].borrow.append(i[1:-1]) #user.borrow récupérera seulement les références des livres, sans les ' '
+                        self.users_list[-1].borrow.append(i[1:-1]) #user.borrow[1:-1] récupérera seulement les références des livres, sans les ' '
 
 
 
