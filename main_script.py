@@ -159,40 +159,45 @@ while inscrire:
 
                         # Fonctionnalité Emprunter un livre
                         elif entry == 1:
+                            #début abonnement d'un utilisateur
                             abo = True
                             while abo:
-                                if connected_user.rank == 0:
+                                if connected_user.rank == 0: #on vérifie que l'utilisateur est abonné
                                     print("Vous devez être abonné(e) pour emprunter un livre !")
                                     Menu(sub)
                                     entry2 = int(input("Choisissez le montant de votre abonnement"))
 
                                     if entry2 == 0:
-                                        print("DOMMAGE")
+                                        print("C'est dommage !")
                                         abo = False
                                         borrows = False
                                         ok = False
 
                                     elif entry2 == 1:
                                         connected_user.rank = 1
-                                        print("Merci pour votre abonnement votre rang est désormais de 1 !")
+                                        print("Merci pour votre abonnement votre rang est désormais de 1 !\n" 
+                                              "Vous pouvez emprunter un livre à la fois !")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 2:
                                         connected_user.rank = 2
-                                        print("Merci pour votre abonnement votre rang est désormais de 2 !")
+                                        print("Merci pour votre abonnement votre rang est désormais de 2 !\n" 
+                                              "Vous pouvez emprunter jusqu'à deux livres en même temps !")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 3:
                                         connected_user.rank = 3
-                                        print("Merci pour votre abonnement votre rang est désormais de 3 !")
+                                        print("Merci pour votre abonnement votre rang est désormais de 3 !\n"
+                                        "Vous pouvez emprunter jusqu'à trois livres en même temps !")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 4:
                                         connected_user.rank = 4
-                                        print("Merci pour votre abonnement votre rang est désormais de 4 !")
+                                        print("Merci pour votre abonnement votre rang est désormais de 4 !\n"
+                                              "Vous pouvez emprunter jusqu'à deux livres en même temps !")
                                         abo = False
                                         borrows = True
                                 else:
@@ -201,10 +206,11 @@ while inscrire:
                                 while borrows:
                                     emprunt = len(connected_user.borrow)
                                     if emprunt == connected_user.rank:
-                                        print("Vous  ne pouvez pas emprunter d'autre livre")
+                                        print("Vous avez atteint votre maximum d'emprunt ! Ramenez nous des livres pour pouvoir continuer à emprunter !")
                                         borrows = False
                                     else:
-                                        print(f"Voici la liste des livres que vous pouvez emprunter : \n {biblio.books_list}" )
+                                        print("Voici la liste des livres que vous pouvez emprunter :")
+                                        biblio.mybooks()
                                         new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
                                         connected_user.Borrow(new_borrow)
                                         biblio.object_by_ref(new_borrow).noDispo()

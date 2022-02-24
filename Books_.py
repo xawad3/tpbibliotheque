@@ -31,6 +31,16 @@ class Books:
     def returnBookDate(self):
         self.backto = None
 
+    def getMyDispo(self):
+
+        if self.dispo == True:
+            dispoOn = '\033[32m'
+            dispoOff = '\033[0m'
+            return (dispoOn + "disponible à l'emprunt" + dispoOff)
+        else:
+            dispoOn = '\033[91m'
+            dispoOff = '\033[0m'
+            return (dispoOn + f'''n'est pas disponible à l'emprunt mais devrait revenir le {datetime.date.strftime(self.backto, "%A %d %B %Y")}''' + dispoOff)
 
     def dateBackto(self):
         self.backto = datetime.date.today() + datetime.timedelta(days=15)
@@ -43,7 +53,7 @@ class Books:
 
     def __repr__(self):
         if self.dispo == True :
-            affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} qui est disponible à l'emprunt\n'''
+            affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} est disponible à l'emprunt\n'''
         else :
             affiche = f'''Le livre "{self.title_book}" de l'auteur "{self.author_book}", réfèrence {self.ref_book} qui n'est plus disponible à l'emprunt qui devrait être de retour {datetime.date.strftime(self.backto, "%A %d %B %Y")}\n'''
         return affiche

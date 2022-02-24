@@ -153,8 +153,13 @@ class Library:
                     for i in (listeEmpruntTempo.split(", ")): #si la liste n'est pas vide, alors on split entre les virgules, pour en faire une liste
                         self.users_list[-1].borrow.append(i[1:-1]) #user.borrow récupérera seulement les références des livres, sans les ' '
 
-                #self.users_list[-1].counter = maLigne[5]
 
+
+    def mybooks(self): #méthode pour afficher seulement l'auteur, le titre, la réf et la dispo de tout les livres de la bibliothèque
+        for i in self.books_list:
+            myref_on = '\33[7m'
+            myref_off = '\33[0m'
+            print(i.title_book + " de l'auteur " + i.author_book + " sous la référence " + myref_on + i.ref_book + myref_off + " " + i.getMyDispo())
 
 
     def object_by_ref(self, ref):

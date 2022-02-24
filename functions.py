@@ -23,6 +23,13 @@ def verif_user(liste_u, log, pwd): #on rentre en paramètre la liste des users, 
                 return True
     return False
 
+def verif_author(biblio, liste_a, author):
+    for i in liste_a:
+        if author.lower() in i.liste_a.lower():
+            biblio.books_by_author(input("Ecrivez le nom de l'auteur\n"))
+        else:
+            print("Nous ne trouvons pas votre recherche")
+
 
 ##---fontion pour le changement du mdp---##
 
