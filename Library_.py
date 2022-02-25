@@ -90,6 +90,7 @@ class Library:
             print("Nous n'avons pas réussi à trouver d'auteur correspondant à votre recherche !")
         elif len(author) > 1:
             Menu(author)
+            print("———————————")
             choix = input("Choisissez votre auteur(le numéro)")
             auteur_choix = author[int(choix)]
             self.books_by_author(auteur_choix)
@@ -110,6 +111,7 @@ class Library:
 
         else:
             Menu(title)
+            print("———————————")
 
 
     def books_by_type(self, x):
@@ -121,6 +123,7 @@ class Library:
             print("Nous n'avons pas réussi à trouver de genre correspondant à votre recherche !")
         else:
             Menu(type)
+            print("———————————")
 
     def books_by_category(self, x):
         category = []
@@ -131,6 +134,7 @@ class Library:
             print("Nous n'avons pas réussi à trouver de catégorie correspondant à votre recherche !")
         else:
             Menu(category)
+            print("———————————")
 
     def books_by_language(self, x):
         language = []
@@ -141,6 +145,7 @@ class Library:
             print("Nous n'avons pas réussi à trouver de langue correspondant à votre recherche !")
         else:
             Menu(language)
+            print("———————————")
 
     def export_users(self):
         with open('list_users.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
