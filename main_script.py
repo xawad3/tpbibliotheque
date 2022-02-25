@@ -272,7 +272,7 @@ while inscrire:
                                             print("--------------------------------------------")
                                             print("Cette référence n'existe pas dans notre bibliothèque")
                                             print("--------------------------------------------")
-
+                                            input("Appuyer sur une touche pour continuer")
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
                             if len(connected_user.borrow) == 0:
