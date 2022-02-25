@@ -3,9 +3,8 @@ from Books_ import *
 
 class ComicStrip(Books):
 
-    def __init__(self, title_book, author_book, language_book, type_book, category_book , color_comic , artist_comic):
+    def __init__(self, title_book, author_book, language_book, type_book, category_book , color_comic, artist_comic):
         super().__init__(title_book, author_book, language_book, type_book, category_book)
-        self.color = True
         self.color_comic = color_comic
         self.artist_comic = artist_comic
 

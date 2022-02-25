@@ -38,7 +38,8 @@ class Library:
         with open("list_books.txt", 'r', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in f:
                 maLigne = item.split(" ; ")
-                self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
+                if len(item) == 8:
+                    self.books_list.append(Books(title_book=maLigne[0],author_book=maLigne[1],language_book=maLigne[2],type_book=maLigne[3],category_book=maLigne[4]))
                 self.books_list[-1].ref_book = maLigne[5]
                 #self.books_list[-1].dispo = maLigne[6]
                 if maLigne[1] not in self.author_list:
