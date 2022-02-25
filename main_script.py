@@ -286,10 +286,16 @@ while inscrire:
                                 for i in connected_user.borrow:
                                     print(biblio.object_by_title(i))
                                 book_borrow = str(input(f"Veuillez saisir la référence dont vous voulez prolonger le prêt ?\n"))
-                                addDays = int(input(f"De combien de jour voulez-vous prolonger votre prêt sur ce livre ?\n"))
-                                biblio.object_by_ref(book_borrow).extendBorrow(addDays)
-                                print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
-                                ok = False
+                                for i in connected_user.borrow:
+                                    if i == book_borrow :
+                                        addDays = int(input(f"De combien de jour voulez-vous prolonger votre prêt sur ce livre ?\n"))
+                                        biblio.object_by_ref(book_borrow).extendBorrow(addDays)
+
+                                        print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
+                                        ok = False
+                                else :
+                                    print("Vous n'avez pas emprunter ce livre !")
+                                    ok = False
 
                         # Fonctionnalité rendre un livre
                         elif entry == 3:
