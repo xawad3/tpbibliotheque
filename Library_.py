@@ -167,8 +167,8 @@ class Library:
 
     def mybooks(self): #méthode pour afficher seulement l'auteur, le titre, la réf et la dispo de tout les livres de la bibliothèque
         for i in self.books_list:
-            myref_on = '\33[7m'
-            myref_off = '\33[0m'
+            myref_on = '\33[7m' #j'initialise le surlignage
+            myref_off = '\33[0m' #je reinitialise le surligange
             print(i.title_book + " de l'auteur " + i.author_book + " sous la référence " + myref_on + i.ref_book + myref_off + " " + i.getMyDispo())
 
 

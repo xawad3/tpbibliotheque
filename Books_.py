@@ -34,12 +34,12 @@ class Books:
     def getMyDispo(self):
 
         if self.dispo == True:
-            dispoOn = '\033[32m'
-            dispoOff = '\033[0m'
+            dispoOn = '\033[32m' #j'initialise ma couleur
+            dispoOff = '\033[0m' #je reinitialise ma couleur
             return (dispoOn + "est disponible à l'emprunt" + dispoOff)
         else:
-            dispoOn = '\033[91m'
-            dispoOff = '\033[0m'
+            dispoOn = '\033[91m' #j'initialise ma couleur
+            dispoOff = '\033[0m' #je reinitialise ma couleur
             return (dispoOn + f'''n'est pas disponible à l'emprunt mais devrait revenir le {datetime.date.strftime(self.backto, "%A %d %B %Y")}''' + dispoOff)
 
     def dateBackto(self):
