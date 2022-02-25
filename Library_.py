@@ -192,7 +192,7 @@ class Library:
     def object_by_title(self, ref):
         for i in self.books_list:
             if ref == i.ref_book:
-                return i.title_book
+                return i.title_book + "           réf :     "  + i.ref_book
 
     # Methode pour pardourir la liste des livres en bibliotheque à partir de la référence, en sortir la disponibilité
     def object_by_dispo(self, ref):

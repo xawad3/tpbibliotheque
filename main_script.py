@@ -273,13 +273,19 @@ while inscrire:
                                             print("Cette référence n'existe pas dans notre bibliothèque")
                                             print("--------------------------------------------")
                                             input("Appuyer sur une touche pour continuer")
+
+
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
                             if len(connected_user.borrow) == 0:
                                 print("Vous n'avez aucun livre en votre possession !\n")
                                 ok = False
                             else :
-                                book_borrow = str(input(f"Voici les livres que vous avez en votre possession :\n {connected_user.borrow}\n Veuillez saisir la référence dont vous voulez prolonger le prêt ?"))
+                                print("Vous avez en votre prossesion les livres suivants : ")
+                                print("--------------------------------------------")
+                                for i in connected_user.borrow:
+                                    print(biblio.object_by_title(i))
+                                book_borrow = str(input(f"Veuillez saisir la référence dont vous voulez prolonger le prêt ?\n"))
                                 addDays = int(input(f"De combien de jour voulez-vous prolonger votre prêt sur ce livre ?\n"))
                                 biblio.object_by_ref(book_borrow).extendBorrow(addDays)
                                 print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
