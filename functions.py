@@ -44,11 +44,11 @@ def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des use
 
 def perte_id(liste_u, name, firstname, mail):
     for i in liste_u:
-        if name == i.name_user:
-            if firstname == i.first_name_user:
-                if mail == i.mail:
+        if name.lower() == i.name_user.lower:
+            if firstname.lower() == i.first_name_user.lower():
+                if mail.lower() == i.mail.lower():
                     return True
-                    print(ok)
+
 
     return False
 

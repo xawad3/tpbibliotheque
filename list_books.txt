@@ -1,11 +1,22 @@
-Une Fois trois ; Axelle AUclair ; Français ; Roman D'amour ; Roman ; ua38344 ; True ; None
-Maudite ; C. Sizel ; Français ; Fantasy ; Roman ; mc92767 ; True ; None
-Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa6679 ; True ; None
-Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc25821 ; True ; None
-Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne52568 ; True ; None
-Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa42438 ; True ; None
-Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd21777 ; True ; None
-La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk31590 ; True ; None
-Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am57751 ; True ; None
-Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl55865 ; True ; None
-Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl27463 ; False ; 2022-03-12
+Harry Potter à l'école des sorciers ; JK Rowling ; Français ; Fantastique ; Roman ; hj84113 ; True ; None
+Harry Potter et la Chambre des Secrets ; JK Rowling ; Français ; Fantastique ; Roman ; hj51611 ; True ; None
+Harry Potter et le Prisonnier d'Azkaban ; JK Rowling ; Français ; Fantastique ; Roman ; hj94952 ; True ; None
+Les Contes de Beedle le Barde ; Beedle le Barde ; Anglais ; Contes pour enfants ; Nouvelles ; lb37440 ; True ; None
+Les Contes du Champignons ; Beatrix Bloxam ; Anglais ; Contes pour enfants ; Nouvelles ; lb14228 ; True ; None
+Rencontre enchantées ; Fifi LaFolle ; Français ; Roman d'amour ; Roman ; rf5493 ; True ; None
+Ma Vie de Moldue ; Daisy Hookum ; Anglais ; Autobiographie ; Autobiographie ; md40709 ; True ; None
+Magical Waters Plants of the Highlands Lochs ; Hadrian Whittle ; Anglais ; Botanique ; Roman ; mh11997 ; True ; None
+Guide to Household Pests ; Gilderoy Lockhart ; Anglais ; Aventures ; Roman ; gg82664 ; True ; None
+Travels with Trolls ; Gilderoy Lockhart ; Anglais, ; Aventures ; Romans ; tg10687 ; True ; None
+Comment ensorceler son fromage ; Greta Grandamour ; Français ; Recettes ; Cuisine ; cg79690 ; True ; None
+Une Fois trois ; Axelle AUclair ; Français ; Roman D'amour ; Roman ; ua12892 ; True ; None
+Maudite ; C. Sizel ; Français ; Fantasy ; Roman ; mc93805 ; True ; None
+Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa21941 ; True ; None
+Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc83866 ; True ; None
+Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne66923 ; True ; None
+Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa5324 ; True ; None
+Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd53272 ; True ; None
+La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk8166 ; True ; None
+Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am52728 ; True ; None
+Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl78165 ; True ; None
+Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl23945 ; True ; None

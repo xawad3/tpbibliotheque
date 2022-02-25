@@ -71,4 +71,17 @@ book8 = Books("La décision", "Karine Tuil", "Français", "Témoignage", "Roman"
 book9 = Books("Anéantir", "Michel Houellebecq", "Français", "Anticipation", "Roman")
 book10 = Books("Celui qui veille la nuit", "Louise Erdrich", "Français", "Roman Historique", "Roman")
 book12 = Books("Celui qui veille la nuit", "Louise Rimbaud", "Français", "Roman Historique", "Roman")
+book13 = Books("Harry Potter à l'école des sorciers", "JK Rowling", "Français", "Fantastique", "Roman")
+book14 = Books("Harry Potter et la Chambre des Secrets", "JK Rowling", "Français", "Fantastique", "Roman")
+book15 = Books("Harry Potter et le Prisonnier d'Azkaban", "JK Rowling", "Français", "Fantastique", "Roman")
+
+book20 = Books("Les Contes de Beedle le Barde", "Beedle le Barde", "Anglais", "Contes pour enfants", "Nouvelles")
+book21 = Books("Les Contes du Champignons", "Beatrix Bloxam", "Anglais", "Contes pour enfants", "Nouvelles")
+book22 = Books("Rencontre enchantées", "Fifi LaFolle", "Français", "Roman d'amour", "Roman")
+book23 = Books("Ma Vie de Moldue", "Daisy Hookum", "Anglais", "Autobiographie", "Autobiographie")
+book24 = Books("Magical Waters Plants of the Highlands Lochs", "Hadrian Whittle", "Anglais", "Botanique", "Roman")
+book25 = Books("Guide to Household Pests", "Gilderoy Lockhart", "Anglais", "Aventures", "Roman")
+book26 = Books("Travels with Trolls", "Gilderoy Lockhart", "Anglais,", "Aventures", "Romans")
+book27 = Books("Comment ensorceler son fromage", "Greta Grandamour", "Français", "Recettes", "Cuisine")
+
 
