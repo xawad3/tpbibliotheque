@@ -209,6 +209,7 @@ while inscrire:
                                 else:
                                     borrows = True
 
+                                # fonctionnalité emprunter un livre
                                 while borrows:
                                     emprunt = len(connected_user.borrow)
                                     if emprunt == connected_user.rank:
