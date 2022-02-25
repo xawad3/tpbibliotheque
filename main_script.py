@@ -301,7 +301,7 @@ while inscrire:
                 break
 
             else:
-                print("ooooopsie")
+                print("Vous vous êtes trompé !")
                 id = False
 
 
