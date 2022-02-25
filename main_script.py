@@ -255,6 +255,54 @@ while inscrire:
                                         borrows = False
                                         abo = False
                                         ok = False
+                                        newabo = True
+                                        while newabo:
+                                            Menu(sub)
+                                            entry3 = int(input("Choisissez un nouvel abonnement !"))
+                                            if entry3 == 0:
+                                                print("dommage")
+                                                abo = False
+                                                borrows = False
+                                                ok = False
+                                                newabo = False
+
+                                            elif entry3 == 1:
+                                                connected_user.rank = 1
+                                                print("———————————")
+                                                print("Merci pour votre abonnement votre rang est désormais de 1 !\n"
+                                                      "Vous pouvez emprunter un livre à la fois !")
+                                                print("———————————")
+                                                newabo = False
+                                                borrows = True
+
+                                            elif entry3 == 2:
+                                                connected_user.rank = 2
+                                                print("———————————")
+                                                print("Merci pour votre abonnement votre rang est désormais de 2 !\n"
+                                                      "Vous pouvez emprunter jusqu'à deux livres en même temps !")
+                                                print("———————————")
+                                                newabo = False
+                                                borrows = True
+
+                                            elif entry3 == 3:
+                                                connected_user.rank = 3
+                                                print("———————————")
+                                                print("Merci pour votre abonnement votre rang est désormais de 1 !\n"
+                                                      "Vous pouvez emprunter jusqu'à trois livres à la fois !")
+                                                print("———————————")
+                                                newabo = False
+                                                borrows = True
+
+                                            elif entry3 == 4:
+                                                connected_user.rank = 4
+                                                print("———————————")
+                                                print("Merci pour votre abonnement votre rang est désormais de 1 !\n"
+                                                      "Vous pouvez emprunter quatre livres à la fois !")
+                                                print("———————————")
+                                                newabo = False
+                                                borrows = True
+
+
                                         
                                     else:
                                         try :
