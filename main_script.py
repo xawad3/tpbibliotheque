@@ -202,7 +202,7 @@ while inscrire:
                                     elif entry2 == 4:
                                         connected_user.rank = 4
                                         print("Merci pour votre abonnement votre rang est désormais de 4 !\n"
-                                              "Vous pouvez emprunter jusqu'à deux livres en même temps !")
+                                              "Vous pouvez emprunter jusqu'à quatre livres en même temps !")
                                         abo = False
                                         borrows = True
                                 else:

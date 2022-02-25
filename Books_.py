@@ -34,8 +34,8 @@ class Books:
     def getMyDispo(self):
 
         if self.dispo == True:
-            dispoOn = '\033[32m'
-            dispoOff = '\033[0m'
+            dispoOn = '\033[32m' #je déclare ma couleur
+            dispoOff = '\033[0m' #je réinitialise la couleur
             return (dispoOn + "est disponible à l'emprunt" + dispoOff)
         else:
             dispoOn = '\033[91m'
