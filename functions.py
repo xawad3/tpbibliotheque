@@ -1,3 +1,6 @@
+import string
+import random
+
 ##---fontion pour la création d'un menu---##
 
 def Menu(a): #on rentre en paramètre une liste de choix
@@ -45,7 +48,14 @@ def perte_id(liste_u, name, firstname, mail):
             if firstname == i.first_name_user:
                 if mail == i.mail:
                     return True
-        else:
-            return False
+                    print(ok)
+
+    return False
+
+
+def random_pwd(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
 
 

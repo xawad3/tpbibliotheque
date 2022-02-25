@@ -287,10 +287,15 @@ while inscrire:
             mail = input("Veuillez entrer votre mail")
             while perte_id(biblio.users_list, name, first, mail):
                 new_id = name[0] + "." + first
-                new_pwd = random.choice(string.ascii_letters)
+                new_pwd = random_pwd(5)
                 changement_mdp(biblio.users_list, new_id, new_pwd)
                 print("Votre id est", new_id)
                 print("Votre nouveau mot de passe est", new_pwd, "prenez soin de le noter")
+                id = False
+                biblio.export_users()
+                inscrire = True
+                ok = False
+                break
 
             else:
                 print("ooooopsie")
