@@ -252,7 +252,7 @@ while inscrire:
                                         print("Vous avez atteint votre maximum d'emprunt ! Ramenez nous des livres pour pouvoir continuer à emprunter !")
                                         print("Vous pouvez souscrire à un nouvel emprunt !")
                                         borrows = False
-                                        abo = True
+                                        abo = False
                                         ok = False
                                     else:
                                         try :
