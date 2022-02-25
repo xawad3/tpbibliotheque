@@ -9,13 +9,14 @@ import string
 
 
 
-choice = ["Rechercher un livre", "Créer un compte", "Se connecter", "J'ai perdu mes identifiants"]
+choice = ["Rechercher un livre", "Créer un compte", "Se connecter", "J'ai perdu mes identifiants", "Quitter le programme"]
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Rendre un livre","Changer votre mot de passe", "Se déconnecter"]
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue", "Revenir au menu précédent"]
 sub = ["Je ne veux pas m'abonner","10 Noises/mois (1 livre emprunté par mois)", "5 Mornilles/mois (jusqu'à 2 livres à la fois)", "10 Mornilles/mois (jusqu'à 3 livres à la fois)", "10 Gallions/mois (jusqu'à 4 livres à la fois)"]
-biblio = Library("Pourdlard")
+biblio = Library("POUDLARD")
 biblio.import_books()
 biblio.import_user()
+#print(biblio.users_list[2].borrow)
 
 # Ajout de livre dans la biblio pour la matière
 # user1 = Users("Potter", "Harry", "drago")
