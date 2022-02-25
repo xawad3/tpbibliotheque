@@ -183,29 +183,37 @@ while inscrire:
 
                                     elif entry2 == 1:
                                         connected_user.rank = 1
+                                        print("———————————")
                                         print("Merci pour votre abonnement votre rang est désormais de 1 !\n" 
                                               "Vous pouvez emprunter un livre à la fois !")
+                                        print("———————————")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 2:
                                         connected_user.rank = 2
+                                        print("———————————")
                                         print("Merci pour votre abonnement votre rang est désormais de 2 !\n" 
                                               "Vous pouvez emprunter jusqu'à deux livres en même temps !")
+                                        print("———————————")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 3:
                                         connected_user.rank = 3
+                                        print("———————————")
                                         print("Merci pour votre abonnement votre rang est désormais de 3 !\n"
                                         "Vous pouvez emprunter jusqu'à trois livres en même temps !")
+                                        print("———————————")
                                         abo = False
                                         borrows = True
 
                                     elif entry2 == 4:
                                         connected_user.rank = 4
+                                        print("———————————")
                                         print("Merci pour votre abonnement votre rang est désormais de 4 !\n"
                                               "Vous pouvez emprunter jusqu'à quatre livres en même temps !")
+                                        print("———————————")
                                         abo = False
                                         borrows = True
                                 else:
