@@ -245,6 +245,7 @@ while inscrire:
                                 else:
                                     borrows = True
 
+                                borrows = True
                                 # fonctionnalité emprunter un livre
                                 while borrows:
                                     emprunt = len(connected_user.borrow)
@@ -254,6 +255,7 @@ while inscrire:
                                         borrows = False
                                         abo = True
                                         ok = False
+                                        
                                     else:
                                         try :
                                             print("Voici la liste des livres que vous pouvez emprunter :")
