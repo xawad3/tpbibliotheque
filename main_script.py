@@ -21,6 +21,8 @@ biblio.import_user()
 # Ajout de livre dans la biblio pour la matière
 # user1 = Users("Potter", "Harry", "drago")
 # biblio.users_list.append(user1)
+# biblio.add_a_book(bd1)
+# biblio.add_a_book(bd2)
 # biblio.add_a_book(book13)
 # biblio.add_a_book(book14)
 # biblio.add_a_book(book15)

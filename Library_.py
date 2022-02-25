@@ -1,6 +1,7 @@
 from Users_ import *
-from Books_ import *
+from Comic_strip import *
 from functions import *
+
 class Library:
 
     def __init__(self, name_library):
@@ -30,33 +31,63 @@ class Library:
     def export_books(self):
         with open('list_books.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in self.books_list:
-                f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ " ; " + str(item.backto) + "\n")
-
+                if type(item) == Books:
+                    f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ " ; " + str(item.backto) + "\n")
+                else:
+                    f.write(str(item.title_book) + " ; " + str(item.author_book) + " ; " + str(
+                        item.language_book) + " ; " + str(item.type_book) + " ; " + str(
+                        item.category_book) + " ; " + str(item.ref_book) + " ; " + str(item.dispo) + " ; " + str(
+                        item.backto) + " ; " + str(item.color_comic) + " ; " + str(item.artist_comic) + "\n")
 # Importation des livres du .txt => books_list
 # ============================================
     def import_books(self):
         with open("list_books.txt", 'r', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
             for item in f:
                 maLigne = item.split(" ; ")
-                self.books_list.append(Books(title_book=maLigne[0], author_book=maLigne[1], language_book=maLigne[2],type_book=maLigne[3], category_book=maLigne[4]))
-                self.books_list[-1].ref_book = maLigne[5]
-                #self.books_list[-1].dispo = maLigne[6]
-                if maLigne[1] not in self.author_list:
-                    self.author_list.append(maLigne[1])
-                if maLigne[4] not in self.section_list:
-                    self.section_list.append(maLigne[4])
-                self.books_list[-1].ref = maLigne[5]
+                if len(maLigne) == 8:
+                    self.books_list.append(Books(title_book=maLigne[0], author_book=maLigne[1], language_book=maLigne[2],type_book=maLigne[3], category_book=maLigne[4]))
+                    self.books_list[-1].ref_book = maLigne[5]
+                    #self.books_list[-1].dispo = maLigne[6]
+                    if maLigne[1] not in self.author_list:
+                        self.author_list.append(maLigne[1])
+                    if maLigne[4] not in self.section_list:
+                        self.section_list.append(maLigne[4])
+                    self.books_list[-1].ref = maLigne[5]
 
-                #--ici on gère la disponibilité des livres dans l'import--#
-                if maLigne[6] == "True": #si l'index 6 de la ligne = "True", on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
-                    self.books_list[-1].dispo = True
-                    self.books_list[-1].backto = None
+                    #--ici on gère la disponibilité des livres dans l'import--#
+                    if maLigne[6] == "True": #si l'index 6 de la ligne = "True", on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
+                        self.books_list[-1].dispo = True
+                        self.books_list[-1].backto = None
 
-                elif maLigne[6] == "False": #si l'index 6 de la ligne = "False", on passe la dispo du livre à False en remettant en place le booléens
-                    self.books_list[-1].dispo = False
-                    #ici, vue que le livre n'est pas disponible, on transforme le string date du fichier txt en date
-                    date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
-                    self.books_list[-1].backto = datetime.datetime.date(date_hour) #on fait en sorte que le backto devienne une date au format aa-mm-dd
+                    elif maLigne[6] == "False": #si l'index 6 de la ligne = "False", on passe la dispo du livre à False en remettant en place le booléens
+                        self.books_list[-1].dispo = False
+                        #ici, vue que le livre n'est pas disponible, on transforme le string date du fichier txt en date
+                        date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
+                        self.books_list[-1].backto = datetime.datetime.date(date_hour) #on fait en sorte que le backto devienne une date au format aa-mm-dd
+
+                else:
+                    self.books_list.append(ComicStrip(title_book=maLigne[0], author_book=maLigne[1], language_book=maLigne[2],type_book=maLigne[3], category_book=maLigne[4], color_comic=maLigne[5], artist_comic=maLigne[6]))
+                    self.books_list[-1].ref_book = maLigne[5]
+                    # self.books_list[-1].dispo = maLigne[6]
+                    if maLigne[1] not in self.author_list:
+                        self.author_list.append(maLigne[1])
+                    if maLigne[4] not in self.section_list:
+                        self.section_list.append(maLigne[4])
+                    self.books_list[-1].ref = maLigne[7]
+
+                    # --ici on gère la disponibilité des livres dans l'import--#
+                    if maLigne[8] == "True":  # si l'index 6 de la ligne = "True", on passe la dispo du livre à True en remettant en place le booléens + la date retour à None#
+                        self.books_list[-1].dispo = True
+                        self.books_list[-1].backto = None
+
+                    elif maLigne[8] == "False":  # si l'index 6 de la ligne = "False", on passe la dispo du livre à False en remettant en place le booléens
+                        self.books_list[-1].dispo = False
+                        # ici, vue que le livre n'est pas disponible, on transforme le string date du fichier txt en date
+                        date_hour = datetime.datetime.strptime(maLigne[9][:-1],
+                                                               "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
+                        self.books_list[-1].backto = datetime.datetime.date(
+                            date_hour)  # on fait en sorte que le backto devienne une date au format aa-mm-dd
+
 
             
 # Affiche la liste des auteurs dans l'ordre alphabétique
