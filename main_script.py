@@ -217,6 +217,8 @@ while inscrire:
                                     if emprunt == connected_user.rank:
                                         print("Vous avez atteint votre maximum d'emprunt ! Ramenez nous des livres pour pouvoir continuer à emprunter !")
                                         borrows = False
+                                        abo = False
+                                        ok = False
                                     else:
                                         print("Voici la liste des livres que vous pouvez emprunter :")
                                         biblio.mybooks()
