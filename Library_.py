@@ -54,7 +54,7 @@ class Library:
 
                 elif maLigne[6] == "False": #si l'index 6 de la ligne = "False", on passe la dispo du livre à False en remettant en place le booléens
                     self.books_list[-1].dispo = False
-                    #ici, vue le livre n'est pas disponible, on transforme le string date du fichier txt en date
+                    #ici, vue que le livre n'est pas disponible, on transforme le string date du fichier txt en date
                     date_hour = datetime.datetime.strptime(maLigne[7][:-1], "%Y-%m-%d")  # /!\[7][:-1] car dans l'import, le \n agit comme un caractère /!\ la fonction strptime permet de transformer le string en date au format aa-mm-dd hh.mm.ss
                     self.books_list[-1].backto = datetime.datetime.date(date_hour) #on fait en sorte que le backto devienne une date au format aa-mm-dd
 
@@ -87,7 +87,7 @@ class Library:
                 if not i.author_book in author:
                     author.append(i.author_book)
         if not author:
-            print("pas d'auteur")
+            print("Nous n'avons pas réussi à trouver d'auteur correspondant à votre recherche !")
         elif len(author) > 1:
             Menu(author)
             choix = input("Choisissez votre auteur(le numéro)")
@@ -106,7 +106,7 @@ class Library:
                 title.append(i.title_book + " : " + i.ref_book)
 
         if not title:
-            print("Pas ce titrere")
+            print("Nous n'avons pas réussi à trouver de titre correspondant à votre recherche !")
 
         else:
             Menu(title)
@@ -118,7 +118,7 @@ class Library:
             if x.lower() in i.type_book.lower():
                 type.append(i.title_book + " : " + i.ref_book)
         if not type:
-            print("Nous ne trouvons pas")
+            print("Nous n'avons pas réussi à trouver de genre correspondant à votre recherche !")
         else:
             Menu(type)
 
@@ -127,14 +127,20 @@ class Library:
         for i in self.books_list:
             if x.lower() in i.category_book.lower():
                 category.append(i.title_book + " : " + i.ref_book)
-        Menu(category)
+        if not category:
+            print("Nous n'avons pas réussi à trouver de catégorie correspondant à votre recherche !")
+        else:
+            Menu(category)
 
     def books_by_language(self, x):
         language = []
         for i in self.books_list:
             if x.lower() in i.language_book.lower():
                 language.append(i.title_book + " : " + i.ref_book)
-        Menu(language)
+        if not language:
+            print("Nous n'avons pas réussi à trouver de langue correspondant à votre recherche !")
+        else:
+            Menu(language)
 
     def export_users(self):
         with open('list_users.txt', 'w', encoding="utf-8") as f: # /!\ on oublie pas d'encoder en utf-8 pour gérer les accents etc
