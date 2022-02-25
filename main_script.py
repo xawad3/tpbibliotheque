@@ -8,15 +8,24 @@ import string
 
 
 
-
+####----MENU UTILISATEUR NON CONNECTÉ----####
 choice = ["Rechercher un livre", "Créer un compte", "Se connecter", "J'ai perdu mes identifiants", "Quitter le programme"]
+
+####----MENU UTILISATEUR CONNECTÉ----####
 choice1 = ["Rechercher un livre", "Emprunter un livre", "Prolonger un emprunt", "Rendre un livre","Changer votre mot de passe", "Se déconnecter"]
+
+####----MENU RECHERCHE D'UN LIVRE----####
 choice2 = ["Par auteur", "Par genre", "Par catégorie", "Par titre", "Par langue", "Revenir au menu précédent"]
+
+####----MENU DES ABONNEMENTS----####
 sub = ["Je ne veux pas m'abonner","10 Noises/mois (1 livre emprunté par mois)", "5 Mornilles/mois (jusqu'à 2 livres à la fois)", "10 Mornilles/mois (jusqu'à 3 livres à la fois)", "10 Gallions/mois (jusqu'à 4 livres à la fois)"]
+
+####----CREATION DE LA BIBLIOTHEQUE----####
 biblio = Library("POUDLARD")
-biblio.import_books()
-biblio.import_user()
-#print(biblio.users_list[2].borrow)
+biblio.import_books() ##--importation des livres dans la bibliothèque
+biblio.import_user() ##--exportation des livres dans la bibliothèque
+
+
 
 # Ajout de livre dans la biblio pour la matière
 # user1 = Users("Potter", "Harry", "drago")
@@ -45,8 +54,7 @@ biblio.import_user()
 # biblio.add_a_book(book9)
 # biblio.add_a_book(book10)
 # biblio.add_a_book(book12)
-#
-# print(user1)
+
 
 
 print("————————————————————————————————————")
@@ -67,7 +75,7 @@ while inscrire:
         ok = True
 
     while ok:
-        ###----début enregistrement d'un utilisateur----###
+        ###----DEBUT ENREGRISTREMENT D'UN UTILISATEUR----###
         if entry == 0:
             Menu(choice2)
             choix = int(input("Comment souhaitez vous rechercher votre livre ?\n"))
@@ -93,7 +101,7 @@ while inscrire:
             first_name = input("Quel est votre prénom ?\n")
             pwd = input("Choisissez un mot de passe: \n")
             mail = input("Entrez votre adresse mail\n")
-            #test = longeurmdp(pwd)
+            ##test = longeurmdp(pwd)##
             while not longeurmdp(pwd):
 
                 pwd = input("Votre mot de passe doit faire au moins 5 caractères veuillez retaper un mot de passe correct.\n")
@@ -107,11 +115,11 @@ while inscrire:
             biblio.users_list.append(new)
 
             ok = False
-        ###----fin enregistrement d'un utilisateur----##
+        ###----FIN D'ENREGISTREMENT UTILISATEUR----##
 
 
 
-        ###----début connexion d'un utilisateur----###
+        ###----DEBUT TENTATIVE CONNEXTION D'UN USER----###
         elif entry == 2:
             inscrire = False
             connexion = True
@@ -120,6 +128,7 @@ while inscrire:
             print("Un instant nous vérifions vos informations ...")
             print("————————————————————————————————————")
             time.sleep(0.5)
+        ###-----DEBUT VERIFICATION ID ET DU MDP----#
             compteur = 0
             while not verif_user(biblio.users_list, logUser, psdUser):
                 compteur += 1
@@ -133,14 +142,17 @@ while inscrire:
                     break
                 inscrire = True
                 ok = False
+        ###----au bout de trois essais, on break le programme----#
+
 
             if connexion:
                 for users in biblio.users_list:
                     if logUser.lower() == users.id.lower():
-                        connected_user = users
+                        connected_user = users #--on enregistre l'user connecté pour pouvoir le ré-utiliser--#
                 print("Connexion réussie")
                 print("————————————————————————————————————")
 
+        ####----DEBUT CONNEXION D'UN USER----###
 
                 infini = True
                 while infini:
@@ -179,9 +191,9 @@ while inscrire:
 
 
 
-                        # Fonctionnalité Emprunter un livre
+                        ####----FONCTIONNALITE EMPRUNTER UN LIVRE----####
                         elif entry == 1:
-                            #début abonnement d'un utilisateur
+                            ####----DEBUT ABONNEMENT USER----####
                             abo = True
                             while abo:
                                 if connected_user.rank == 0: #on vérifie que l'utilisateur est abonné
