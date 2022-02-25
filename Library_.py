@@ -182,16 +182,25 @@ class Library:
             myref_off = '\33[0m' #je reinitialise le surligange
             print(i.title_book + " de l'auteur " + i.author_book + " sous la référence " + myref_on + i.ref_book + myref_off + " " + i.getMyDispo())
 
-
+    # Methode pour pardourir la liste des livres en bibliotheque et n'en sortir que la référence
     def object_by_ref(self, ref):
         for i in self.books_list:
             if ref == i.ref_book:
                 return i
 
+    # Methode pour pardourir la liste des livres en bibliotheque à partir de la référence, en sortir le titre
     def object_by_title(self, ref):
         for i in self.books_list:
             if ref == i.ref_book:
                 return i.title_book
+
+    # Methode pour pardourir la liste des livres en bibliotheque à partir de la référence, en sortir la disponibilité
+    def object_by_dispo(self, ref):
+        for i in self.books_list:
+            if ref == i.ref_book:
+                return i.dispo
+
+
 
 
 

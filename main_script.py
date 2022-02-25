@@ -240,20 +240,38 @@ while inscrire:
                                         abo = False
                                         ok = False
                                     else:
-                                        print("Voici la liste des livres que vous pouvez emprunter :")
-                                        biblio.mybooks()
-                                        new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
-                                        connected_user.Borrow(new_borrow)
-                                        biblio.object_by_ref(new_borrow).noDispo()
-                                        biblio.object_by_ref(new_borrow).dateBackto()
-                                        print(
-                                            f"Vous venez d'emprunter {biblio.object_by_ref(new_borrow)}et il vous faudra le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}\n Vous avez en votre prossesion les livres suivants : ")
-                                        for i in connected_user.borrow:
-                                            print(biblio.object_by_title(i))
-                                        input("Veuillez appuyer sur une touche pour continuer...")
-                                        borrows = False
-                                        abo = False
-                                        ok = False
+                                        try :
+                                            print("Voici la liste des livres que vous pouvez emprunter :")
+                                            biblio.mybooks()
+                                            new_borrow = str(input("Veuillez entrer la référence du livre que vous voulez emprunter ?\n").lower())
+                                            if biblio.object_by_dispo(new_borrow) == False:
+                                                print("--------------------------------------------")
+                                                print("Ce livre n'est pas disponible pour le moment")
+                                                print("--------------------------------------------")
+                                                input("Appuyer sur une touche pour continuer")
+                                                borrows = False
+
+                                            else:
+                                                connected_user.Borrow(new_borrow)
+                                                biblio.object_by_ref(new_borrow).noDispo()
+                                                biblio.object_by_ref(new_borrow).dateBackto()
+                                                print("--------------------------------------------")
+                                                print(f"Vous venez d'emprunter {biblio.object_by_ref(new_borrow)}et il vous faudra donc le rendre avant la date du {biblio.object_by_ref(new_borrow).dateBackto()}")
+                                                print("--------------------------------------------")
+                                                print ("Vous avez en votre prossesion les livres suivants : ")
+                                                print("--------------------------------------------")
+                                                for i in connected_user.borrow:
+                                                    print(biblio.object_by_title(i))
+
+                                                input("Veuillez appuyer sur une touche pour continuer...")
+                                                borrows = False
+                                                abo = False
+                                                ok = False
+                                        except AttributeError :
+                                            connected_user.BackTo(new_borrow)
+                                            print("--------------------------------------------")
+                                            print("Cette référence n'existe pas dans notre bibliothèque")
+                                            print("--------------------------------------------")
 
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
