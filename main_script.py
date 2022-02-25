@@ -4,6 +4,7 @@ from Person_ import *
 from Library_ import *
 from Users_ import *
 import time
+import string
 
 
 
@@ -77,6 +78,7 @@ while inscrire:
             name = input("Quel est votre nom ?\n")
             first_name = input("Quel est votre prénom ?\n")
             pwd = input("Choisissez un mot de passe: \n")
+            mail = input("Entrez votre adresse mail\n")
             #test = longeurmdp(pwd)
             while not longeurmdp(pwd):
 
@@ -85,7 +87,7 @@ while inscrire:
             print("Un instant nous vérifions vos informations ...")
             print("————————————————————————————————————")
             time.sleep(1)
-            new = Users(name, first_name, pwd)
+            new = Users(name, first_name, pwd, mail)
             print("Félicitations votre compte utilisateur a été créé, voici votre identifiant", new.id, "prenez soin de le noter !")
             print("————————————————————————————————————")
             biblio.users_list.append(new)
@@ -280,6 +282,32 @@ while inscrire:
 
 
                 ###----fin connexion d'un utilisateur----###
+
+        elif entry == 3:
+            id = False
+            name = input("Veuillez entrer votre nom")
+            first = input("Veuillez entrer votre prénom")
+            mail = input("Veuillez entrer votre mail")
+            while perte_id(biblio.users_list, name, first, mail):
+                new_id = name[0] + "." + first
+                new_pwd = random_pwd(5)
+                changement_mdp(biblio.users_list, new_id, new_pwd)
+                print("Votre id est", new_id)
+                print("Votre nouveau mot de passe est", new_pwd, "prenez soin de le noter")
+                id = False
+                biblio.export_users()
+                inscrire = True
+                ok = False
+                break
+
+            else:
+                print("ooooopsie")
+                id = False
+
+
+
+
+
         elif entry == 4:
             inscrire = False
             ok = False

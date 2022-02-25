@@ -1,3 +1,6 @@
+import string
+import random
+
 ##---fontion pour la création d'un menu---##
 
 def Menu(a): #on rentre en paramètre une liste de choix
@@ -39,5 +42,20 @@ def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des use
             i.pwd = pwd
 
 
+def perte_id(liste_u, name, firstname, mail):
+    for i in liste_u:
+        if name == i.name_user:
+            if firstname == i.first_name_user:
+                if mail == i.mail:
+                    return True
+                    print(ok)
+
+    return False
+
+
+def random_pwd(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    return result_str
 
 
