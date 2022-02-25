@@ -17,4 +17,3 @@ bd1 = ComicStrip("Huntr 2-La brousse", "Jordan Morris", "Français", "Aventure",
 bd2 = ComicStrip("Akira","Otomo Katsuhiro", "Français", "Anticipation", "BD",False, "Otomo Katsuhiro")
 bd3 = ComicStrip("Atar Gull ou le destin d'un esclave modèle","Fabien Nury", "Français", "Adaptation", "BD",True, "Laurence Croix")
 
-print(bd1)

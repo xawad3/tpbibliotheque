@@ -38,13 +38,13 @@ def verif_author(biblio, liste_a, author):
 
 def changement_mdp(liste_u, log, pwd): #on rentre en paramètre la liste des users, l'id et le mdp
     for i in liste_u:
-        if log == i.id: #on vérifie que l'id de l'user est le bon et on change son mdp
+        if log.lower() == i.id.lower(): #on vérifie que l'id de l'user est le bon et on change son mdp
             i.pwd = pwd
 
 
 def perte_id(liste_u, name, firstname, mail):
     for i in liste_u:
-        if name.lower() == i.name_user.lower:
+        if name.lower() == i.name_user.lower():
             if firstname.lower() == i.first_name_user.lower():
                 if mail.lower() == i.mail.lower():
                     return True

@@ -1,24 +1,24 @@
-Huntr 2-La brousse ; Jordan Morris ; Français ; Aventure ; BD ; hj32564 ; True ; None ; True ; Himself
-Akira ; Otomo Katsuhiro ; Français ; Anticipation ; BD ; ao17537 ; True ; None ; False ; Otomo Katsuhiro
-Harry Potter à l'école des sorciers ; JK Rowling ; Français ; Fantastique ; Roman ; hj98608 ; True ; None
-Harry Potter et la Chambre des Secrets ; JK Rowling ; Français ; Fantastique ; Roman ; hj40757 ; True ; None
-Harry Potter et le Prisonnier d'Azkaban ; JK Rowling ; Français ; Fantastique ; Roman ; hj22156 ; True ; None
-Les Contes de Beedle le Barde ; Beedle le Barde ; Anglais ; Contes pour enfants ; Nouvelles ; lb15514 ; True ; None
-Les Contes du Champignons ; Beatrix Bloxam ; Anglais ; Contes pour enfants ; Nouvelles ; lb10532 ; True ; None
-Rencontre enchantées ; Fifi LaFolle ; Français ; Roman d'amour ; Roman ; rf47615 ; True ; None
-Ma Vie de Moldue ; Daisy Hookum ; Anglais ; Autobiographie ; Autobiographie ; md99479 ; True ; None
-Magical Waters Plants of the Highlands Lochs ; Hadrian Whittle ; Anglais ; Botanique ; Roman ; mh9370 ; True ; None
-Guide to Household Pests ; Gilderoy Lockhart ; Anglais ; Aventures ; Roman ; gg29596 ; True ; None
-Travels with Trolls ; Gilderoy Lockhart ; Anglais, ; Aventures ; Romans ; tg77594 ; True ; None
-Comment ensorceler son fromage ; Greta Grandamour ; Français ; Recettes ; Cuisine ; cg16529 ; True ; None
-Une Fois trois ; Axelle AUclair ; Français ; Roman D'amour ; Roman ; ua26680 ; True ; None
-Maudite ; C. Sizel ; Français ; Fantasy ; Roman ; mc86600 ; True ; None
-Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa80890 ; True ; None
-Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc57712 ; True ; None
-Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne5308 ; True ; None
-Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa83626 ; True ; None
-Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd84258 ; True ; None
-La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk20190 ; True ; None
-Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am88228 ; True ; None
-Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl57238 ; True ; None
-Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl16710 ; True ; None
+Huntr 2-La brousse ; Jordan Morris ; Français ; Aventure ; BD ; hj57939 ; True ; None ; True ; Himself
+Akira ; Otomo Katsuhiro ; Français ; Anticipation ; BD ; ao45208 ; True ; None ; False ; Otomo Katsuhiro
+Harry Potter à l'école des sorciers ; JK Rowling ; Français ; Fantastique ; Roman ; hj13286 ; True ; None
+Harry Potter et la Chambre des Secrets ; JK Rowling ; Français ; Fantastique ; Roman ; hj8867 ; True ; None
+Harry Potter et le Prisonnier d'Azkaban ; JK Rowling ; Français ; Fantastique ; Roman ; hj24156 ; True ; None
+Les Contes de Beedle le Barde ; Beedle le Barde ; Anglais ; Contes pour enfants ; Nouvelles ; lb74745 ; True ; None
+Les Contes du Champignons ; Beatrix Bloxam ; Anglais ; Contes pour enfants ; Nouvelles ; lb74793 ; True ; None
+Rencontre enchantées ; Fifi LaFolle ; Français ; Roman d'amour ; Roman ; rf64541 ; True ; None
+Ma Vie de Moldue ; Daisy Hookum ; Anglais ; Autobiographie ; Autobiographie ; md42244 ; True ; None
+Magical Waters Plants of the Highlands Lochs ; Hadrian Whittle ; Anglais ; Botanique ; Roman ; mh25747 ; True ; None
+Guide to Household Pests ; Gilderoy Lockhart ; Anglais ; Aventures ; Roman ; gg34051 ; True ; None
+Travels with Trolls ; Gilderoy Lockhart ; Anglais, ; Aventures ; Romans ; tg2787 ; True ; None
+Comment ensorceler son fromage ; Greta Grandamour ; Français ; Recettes ; Cuisine ; cg49617 ; True ; None
+Une Fois trois ; Axelle AUclair ; Français ; Roman D'amour ; Roman ; ua95853 ; True ; None
+Maudite ; C. Sizel ; Français ; Fantasy ; Roman ; mc10724 ; True ; None
+Au café de la ville perdue ; Anaïs Llobet ; Français ; Littérature Française ; Roman ; aa81997 ; True ; None
+Légendes et contes traditionnels de l'Inde ; Catherine Clément ; Français ; Non-Fiction ; Roman ; lc28927 ; True ; None
+Nouvelles histoires extraordinaires ; Edgar Allan Poe ; Français ; Fantastique ; Nouvelles ; ne5520 ; True ; None
+Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa77284 ; True ; None
+Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd20876 ; True ; None
+La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk96859 ; True ; None
+Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am13449 ; True ; None
+Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl24810 ; True ; None
+Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl16665 ; False ; 2022-03-12
