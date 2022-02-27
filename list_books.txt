@@ -1,5 +1,7 @@
 Huntr 2-La brousse ; Jordan Morris ; Français ; Aventure ; BD ; hj57939 ; True ; None ; True ; Himself
+
 Akira ; Otomo Katsuhiro ; Français ; Anticipation ; BD ; ao45208 ; True ; None ; False ; Otomo Katsuhiro
+
 Harry Potter à l'école des sorciers ; JK Rowling ; Français ; Fantastique ; Roman ; hj13286 ; True ; None
 Harry Potter et la Chambre des Secrets ; JK Rowling ; Français ; Fantastique ; Roman ; hj8867 ; True ; None
 Harry Potter et le Prisonnier d'Azkaban ; JK Rowling ; Français ; Fantastique ; Roman ; hj24156 ; True ; None
@@ -20,5 +22,5 @@ Poésies Complètes ; Arthur Rimbaud ; Français ; Littérature ; Poèmes ; pa77
 Numéro 2 ; David Foenkinos ; Français ; Drame ; Roman ; nd20876 ; True ; None
 La décision ; Karine Tuil ; Français ; Témoignage ; Roman ; lk96859 ; True ; None
 Anéantir ; Michel Houellebecq ; Français ; Anticipation ; Roman ; am13449 ; True ; None
-Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl24810 ; True ; None
+Celui qui veille la nuit ; Louise Erdrich ; Français ; Roman Historique ; Roman ; cl24810 ; False ; 2022-03-14
 Celui qui veille la nuit ; Louise Rimbaud ; Français ; Roman Historique ; Roman ; cl16665 ; False ; 2022-03-12
