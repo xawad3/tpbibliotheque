@@ -251,7 +251,7 @@ while inscrire:
                                     emprunt = len(connected_user.borrow)
                                     if emprunt == connected_user.rank:
                                         print("Vous avez atteint votre maximum d'emprunt ! Ramenez nous des livres pour pouvoir continuer à emprunter !")
-                                        print("Vous pouvez souscrire à un nouvel emprunt !")
+                                        print("Vous pouvez souscrire à un nouvel abonnement !")
                                         borrows = False
                                         abo = False
                                         ok = False
@@ -343,7 +343,10 @@ while inscrire:
                         #Fonctionnalité Prolonger un emprunt
                         elif entry == 2:
                             if len(connected_user.borrow) == 0:
+                                print("--------------------------------------------")
                                 print("Vous n'avez aucun livre en votre possession !\n")
+                                print("--------------------------------------------")
+                                input("Appuyer sur une touche pour continuer")
                                 ok = False
                             else :
                                 print("Vous avez en votre prossesion les livres suivants : ")
@@ -357,19 +360,43 @@ while inscrire:
                                         biblio.object_by_ref(book_borrow).extendBorrow(addDays)
 
                                         print(f"Le livre référence {book_borrow} devra dorénavant être rendu le {datetime.date.strftime(biblio.object_by_ref(book_borrow).backto, '%A %d %B %Y')}")
+                                        print("--------------------------------------------")
+                                        input("Appuyer sur une touche pour continuer")
                                         ok = False
                                 else :
+                                    print("--------------------------------------------")
                                     print("Vous n'avez pas emprunter ce livre !")
+                                    print("--------------------------------------------")
+                                    input("Appuyer sur une touche pour continuer")
                                     ok = False
 
                         # Fonctionnalité rendre un livre
                         elif entry == 3:
-                            book_borrow = str(input(f"Voici les livres que vous avez en votre possession :\n {connected_user.borrow}\n Veuillez saisir la référence que vous voulez rendre ?"))
-                            connected_user.BackTo(book_borrow)
-                            biblio.object_by_ref(book_borrow).Dispo()
-                            biblio.object_by_ref(book_borrow).returnBookDate()
-                            print(f"Vous venez de rendre le livre réf.{book_borrow}, il vous reste {connected_user.borrow} en votre possession.")
-                            ok = False
+                            if len(connected_user.borrow) == 0:
+                                print("Vous n'avez aucun livre en votre possession !\n")
+                                ok = False
+                            else :
+                                print("Vous avez en votre prossesion les livres suivants : ")
+                                print("--------------------------------------------")
+                                for i in connected_user.borrow:
+                                    print(biblio.object_by_title(i))
+                                book_borrow = str(input(f"Veuillez saisir la référence du livre que vous voulez rendre ?\n"))
+                                for i in connected_user.borrow:
+                                    if i == book_borrow :
+                                        connected_user.BackTo(book_borrow)
+                                        biblio.object_by_ref(book_borrow).Dispo()
+                                        biblio.object_by_ref(book_borrow).returnBookDate()
+                                        print("--------------------------------------------")
+                                        print(f"Vous venez de rendre le livre {biblio.object_by_title(book_borrow)}, il vous reste {len(connected_user.borrow)} livre(s) en votre possession.")
+                                        print("--------------------------------------------")
+                                        input("Appuyer sur une touche pour continuer")
+                                        ok = False
+                                    else:
+                                        print("--------------------------------------------")
+                                        print("Vous n'avez pas emprunter ce livre !")
+                                        print("--------------------------------------------")
+                                        input("Appuyer sur une touche pour continuer")
+                                        ok = False
 
                         elif entry == 4:
                             changement = True
