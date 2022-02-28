@@ -34,10 +34,7 @@ class Library:
                 if type(item) == Books:
                     f.write(str(item.title_book) +" ; "+ str(item.author_book) +" ; "+ str(item.language_book) +" ; "+ str(item.type_book) +" ; "+ str(item.category_book) +" ; "+ str(item.ref_book) +" ; "+ str(item.dispo)+ " ; " + str(item.backto) + "\n")
                 else:
-                    f.write(str(item.title_book) + " ; " + str(item.author_book) + " ; " + str(
-                        item.language_book) + " ; " + str(item.type_book) + " ; " + str(
-                        item.category_book) + " ; " + str(item.ref_book) + " ; " + str(item.dispo) + " ; " + str(
-                        item.backto) + " ; " + str(item.color_comic) + " ; " + str(item.artist_comic) + "\n")
+                    f.write(str(item.title_book) + " ; " + str(item.author_book) + " ; " + str(item.language_book) + " ; " + str(item.type_book) + " ; " + str(item.category_book) + " ; " + str(item.ref_book) + " ; " + str(item.dispo) + " ; " + str(item.backto) + " ; " + str(item.color_comic) + " ; " + str(item.artist_comic))
 # Importation des livres du .txt => books_list
 # ============================================
     def import_books(self):

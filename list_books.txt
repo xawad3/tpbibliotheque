@@ -1,12 +1,10 @@
 Huntr 2-La brousse ; Jordan Morris ; Français ; Aventure ; BD ; hj57939 ; True ; None ; True ; Himself
-
 Akira ; Otomo Katsuhiro ; Français ; Anticipation ; BD ; ao45208 ; True ; None ; False ; Otomo Katsuhiro
-
 Harry Potter à l'école des sorciers ; JK Rowling ; Français ; Fantastique ; Roman ; hj13286 ; True ; None
 Harry Potter et la Chambre des Secrets ; JK Rowling ; Français ; Fantastique ; Roman ; hj8867 ; True ; None
 Harry Potter et le Prisonnier d'Azkaban ; JK Rowling ; Français ; Fantastique ; Roman ; hj24156 ; True ; None
 Les Contes de Beedle le Barde ; Beedle le Barde ; Anglais ; Contes pour enfants ; Nouvelles ; lb74745 ; True ; None
-Les Contes du Champignons ; Beatrix Bloxam ; Anglais ; Contes pour enfants ; Nouvelles ; lb74793 ; True ; None
+Les Contes du Champignons ; Beatrix Bloxam ; Anglais ; Contes pour enfants ; Nouvelles ; lb74793 ; False ; 2022-03-14
 Rencontre enchantées ; Fifi LaFolle ; Français ; Roman d'amour ; Roman ; rf64541 ; True ; None
 Ma Vie de Moldue ; Daisy Hookum ; Anglais ; Autobiographie ; Autobiographie ; md42244 ; True ; None
 Magical Waters Plants of the Highlands Lochs ; Hadrian Whittle ; Anglais ; Botanique ; Roman ; mh25747 ; True ; None
